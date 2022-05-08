@@ -188,7 +188,9 @@ namespace QuanLyBanHang.Gui
                     formc.ShowDialog();
                     break;
                 case "Product":
-
+                    string selected_pro_id = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
+                    var formp = new RemoveProduct(selected_pro_id);
+                    formp.ShowDialog();
                     break;
                 case "":
                     MessageBox.Show("No object selected");

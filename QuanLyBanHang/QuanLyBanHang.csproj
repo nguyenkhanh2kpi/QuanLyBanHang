@@ -133,6 +133,12 @@
     <Compile Include="Gui\RemoveCategory.Designer.cs">
       <DependentUpon>RemoveCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gui\RemoveProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\RemoveProduct.Designer.cs">
+      <DependentUpon>RemoveProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\CartItem.cs">
       <DependentUpon>QuanLyBanHangEntities.tt</DependentUpon>
     </Compile>
@@ -218,6 +224,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Gui\RemoveCategory.resx">
       <DependentUpon>RemoveCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\RemoveProduct.resx">
+      <DependentUpon>RemoveProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

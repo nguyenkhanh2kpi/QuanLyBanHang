@@ -1,2 +1,0 @@
-# QuanLyBanHang
-Do An Window

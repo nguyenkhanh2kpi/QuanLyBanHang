@@ -26,3 +26,4 @@ C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\remake\QuanLyBanHang\QuanLyBanHang\obj
 C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\remake\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.Gui.RemoveCategory.resources
 C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\remake\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.Gui.AddProduct.resources
 C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\remake\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.Gui.ChangeProduct.resources
+C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\remake\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.Gui.RemoveProduct.resources
