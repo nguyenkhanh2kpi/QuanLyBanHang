@@ -80,6 +80,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\EmpSale.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +92,12 @@
     </Compile>
     <Compile Include="Gui\AddCat.Designer.cs">
       <DependentUpon>AddCat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\AddCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\AddCustomer.Designer.cs">
+      <DependentUpon>AddCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="Gui\AddProduct.cs">
       <SubType>Form</SubType>
@@ -164,6 +171,12 @@
     <Compile Include="Gui\RemoveCategory.Designer.cs">
       <DependentUpon>RemoveCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gui\RemoveCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\RemoveCustomer.Designer.cs">
+      <DependentUpon>RemoveCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gui\RemoveEmp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,12 +189,13 @@
     <Compile Include="Gui\RemoveProduct.Designer.cs">
       <DependentUpon>RemoveProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="Gui\Sales.cs">
+    <Compile Include="Gui\Report.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Gui\Sales.Designer.cs">
-      <DependentUpon>Sales.cs</DependentUpon>
+    <Compile Include="Gui\Report.Designer.cs">
+      <DependentUpon>Report.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helper\Delete.cs" />
     <Compile Include="Helper\RegexString.cs" />
     <Compile Include="Models\CartItem.cs">
       <DependentUpon>QuanLyBanHang.tt</DependentUpon>
@@ -236,6 +250,9 @@
     <EmbeddedResource Include="Gui\AddCat.resx">
       <DependentUpon>AddCat.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Gui\AddCustomer.resx">
+      <DependentUpon>AddCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Gui\AddProduct.resx">
       <DependentUpon>AddProduct.cs</DependentUpon>
     </EmbeddedResource>
@@ -272,14 +289,17 @@
     <EmbeddedResource Include="Gui\RemoveCategory.resx">
       <DependentUpon>RemoveCategory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Gui\RemoveCustomer.resx">
+      <DependentUpon>RemoveCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Gui\RemoveEmp.resx">
       <DependentUpon>RemoveEmp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gui\RemoveProduct.resx">
       <DependentUpon>RemoveProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Gui\Sales.resx">
-      <DependentUpon>Sales.cs</DependentUpon>
+    <EmbeddedResource Include="Gui\Report.resx">
+      <DependentUpon>Report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

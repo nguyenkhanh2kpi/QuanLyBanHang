@@ -73,11 +73,11 @@ namespace QuanLyBanHang.Gui
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(3, 488);
+            this.button2.Location = new System.Drawing.Point(0, 488);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(199, 91);
             this.button2.TabIndex = 6;
-            this.button2.Text = "Sales";
+            this.button2.Text = "Report";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -127,13 +127,14 @@ namespace QuanLyBanHang.Gui
             // 
             // buttonCategory
             // 
+            this.buttonCategory.BackColor = System.Drawing.SystemColors.Control;
             this.buttonCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCategory.Location = new System.Drawing.Point(3, 3);
             this.buttonCategory.Name = "buttonCategory";
             this.buttonCategory.Size = new System.Drawing.Size(199, 91);
             this.buttonCategory.TabIndex = 1;
             this.buttonCategory.Text = "Category";
-            this.buttonCategory.UseVisualStyleBackColor = true;
+            this.buttonCategory.UseVisualStyleBackColor = false;
             this.buttonCategory.Click += new System.EventHandler(this.buttonCategory_Click);
             // 
             // button1
@@ -230,14 +231,14 @@ namespace QuanLyBanHang.Gui
             // registerToolStripMenuItem
             // 
             this.registerToolStripMenuItem.Name = "registerToolStripMenuItem";
-            this.registerToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.registerToolStripMenuItem.Size = new System.Drawing.Size(132, 24);
             this.registerToolStripMenuItem.Text = "Register";
             this.registerToolStripMenuItem.Click += new System.EventHandler(this.registerToolStripMenuItem_Click);
             // 
             // removeToolStripMenuItem1
             // 
             this.removeToolStripMenuItem1.Name = "removeToolStripMenuItem1";
-            this.removeToolStripMenuItem1.Size = new System.Drawing.Size(210, 24);
+            this.removeToolStripMenuItem1.Size = new System.Drawing.Size(132, 24);
             this.removeToolStripMenuItem1.Text = "Remove";
             this.removeToolStripMenuItem1.Click += new System.EventHandler(this.removeToolStripMenuItem1_Click);
             // 

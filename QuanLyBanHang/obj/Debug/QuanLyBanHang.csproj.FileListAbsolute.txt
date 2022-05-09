@@ -65,4 +65,6 @@ C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\git-remake\QuanLyBanHang\QuanLyBanHang
 C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\git-remake\QuanLyBanHang\QuanLyBanHang\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
 C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\git-remake\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.Gui.Register.resources
 C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\git-remake\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.Gui.RemoveEmp.resources
-C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\git-remake\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.Gui.Sales.resources
+C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\git-remake\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.Gui.Report.resources
+C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\git-remake\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.Gui.AddCustomer.resources
+C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\git-remake\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.Gui.RemoveCustomer.resources

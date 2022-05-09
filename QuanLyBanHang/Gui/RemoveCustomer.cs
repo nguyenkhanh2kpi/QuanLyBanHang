@@ -12,26 +12,26 @@ using System.Windows.Forms;
 
 namespace QuanLyBanHang.Gui
 {
-    public partial class RemoveEmp : Form
+    public partial class RemoveCustomer : Form
     {
-        Employee emp;
-        public RemoveEmp(Employee emp)
+        Customer customer;
+        public RemoveCustomer(Customer customer)
         {
             InitializeComponent();
-            this.emp = emp;
+            this.customer = customer;
         }
 
-        private void RemoveEmp_Load(object sender, EventArgs e)
+        private void RemoveCustomer_Load(object sender, EventArgs e)
         {
-            labelID.Text = this.emp.id.ToString();
-            labelName.Text = this.emp.e_name;
+            labelID.Text = customer.id.ToString();
+            labelName.Text = customer.e_name;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Delete d = new Delete();
-            d.DeleteEmployee(emp);
-            MessageBox.Show("SUCCESS");
+            var d = new Delete();
+            d.DeleteCustomer(customer);
+            MessageBox.Show("SUCESS");
             this.Close();
         }
     }

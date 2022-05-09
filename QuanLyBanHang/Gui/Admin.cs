@@ -112,10 +112,11 @@ namespace QuanLyBanHang.Gui
         }
 
 
-        // Sale click
+        // Sales click
         private void button2_Click(object sender, EventArgs e)
         {
-
+            var form = new Report();
+            form.ShowDialog();
         }
 
         private void Admin_Load(object sender, EventArgs e)
@@ -288,6 +289,10 @@ namespace QuanLyBanHang.Gui
                     var form = new Register();
                     form.ShowDialog();
                     break;
+                case "Customer":
+                    var form1 = new AddCustomer();
+                    form1.ShowDialog();
+                    break;
                 default:
                     break;
             }
@@ -304,6 +309,15 @@ namespace QuanLyBanHang.Gui
                     {
                         var employee = db.Employees.FirstOrDefault(emp => emp.id.ToString() == selected_emp_id);
                         var form1 = new RemoveEmp(employee);
+                        form1.ShowDialog();
+                    }
+                    break;
+                case "Customer":
+                    string selected_cus_id = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
+                    using (var db = new QuanLyBanHang1Entities())
+                    {
+                        var customer = db.Customers.FirstOrDefault(emp => emp.id.ToString() == selected_cus_id);
+                        var form1 = new RemoveCustomer(customer);
                         form1.ShowDialog();
                     }
                     break;

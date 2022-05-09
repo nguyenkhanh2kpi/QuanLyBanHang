@@ -68,9 +68,9 @@ namespace QuanLyBanHang.Gui
             SaveFileDialog saveFile = new SaveFileDialog();
             saveFile.Title = "bill";
             saveFile.Filter = "Excel (*.xlsx)|*.xlsx ";
-            saveFile.FileName = "C:/Users/KHANH/OneDrive/Desktop/DeTaiWinF/git-remake/QuanLyBanHang/bills/" + "order_"+order.order_id.ToString()+".xlsx";
+            saveFile.FileName = "C:/Users/KHANH/OneDrive/Desktop/DeTaiWinF/git-remake/QuanLyBanHang/bills/"+"order_" +order.order_id.ToString()+".xlsx";
             ExportExcel(saveFile.FileName);
-            MessageBox.Show("SUCESS");
+            MessageBox.Show("SUCCESS");
             /*
             if(saveFile.ShowDialog() == DialogResult.OK)
             {

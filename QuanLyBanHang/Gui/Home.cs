@@ -141,7 +141,12 @@ namespace QuanLyBanHang.Gui
                     var cusbyphone = db.Customers.FirstOrDefault(s => s.phone_number == textBoxCusphone.Text);
                     if (cusbyphone == null)
                     {
-                        MessageBox.Show("Can find your phone number");
+                         DialogResult dlr =  MessageBox.Show(" 'Yes' to create a customer or 'No' to retry","Customer", MessageBoxButtons.YesNo);
+                        if(dlr == DialogResult.Yes)
+                        {
+                            var form = new AddCustomer(textBoxCusphone.Text);
+                            form.ShowDialog();
+                        }
                     }
                     else
                     {

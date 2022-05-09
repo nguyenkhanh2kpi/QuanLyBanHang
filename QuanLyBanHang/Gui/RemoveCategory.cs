@@ -1,4 +1,5 @@
-﻿using QuanLyBanHang.Models;
+﻿using QuanLyBanHang.Helper;
+using QuanLyBanHang.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,21 +33,10 @@ namespace QuanLyBanHang.Gui
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                using (var db = new QuanLyBanHang1Entities())
-                {
-                    db.Entry(category).State = System.Data.Entity.EntityState.Deleted;
-                    db.SaveChanges();
-                    MessageBox.Show("Success");
-                    this.Close();
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Fail");
-            }
-
+            var d = new Delete();
+            d.DeleteCategory(category);
+            MessageBox.Show("Success");
+            this.Close();
         }
     }
 }

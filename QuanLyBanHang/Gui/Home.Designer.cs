@@ -29,7 +29,9 @@ namespace QuanLyBanHang.Gui
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonReset = new System.Windows.Forms.Button();
             this.buttonCheckOut = new System.Windows.Forms.Button();
             this.buttonCart = new System.Windows.Forms.Button();
             this.buttonProduct = new System.Windows.Forms.Button();
@@ -48,10 +50,9 @@ namespace QuanLyBanHang.Gui
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBoxCusphone = new System.Windows.Forms.TextBox();
-            this.buttonCheck = new System.Windows.Forms.Button();
             this.labelCusname = new System.Windows.Forms.Label();
-            this.buttonReset = new System.Windows.Forms.Button();
+            this.buttonCheck = new System.Windows.Forms.Button();
+            this.textBoxCusphone = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panelCart2.SuspendLayout();
@@ -71,12 +72,24 @@ namespace QuanLyBanHang.Gui
             this.panel1.Size = new System.Drawing.Size(210, 574);
             this.panel1.TabIndex = 0;
             // 
+            // buttonReset
+            // 
+            this.buttonReset.BackColor = System.Drawing.Color.Crimson;
+            this.buttonReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonReset.Location = new System.Drawing.Point(3, 3);
+            this.buttonReset.Name = "buttonReset";
+            this.buttonReset.Size = new System.Drawing.Size(204, 132);
+            this.buttonReset.TabIndex = 4;
+            this.buttonReset.Text = "RESET";
+            this.buttonReset.UseVisualStyleBackColor = false;
+            this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
+            // 
             // buttonCheckOut
             // 
             this.buttonCheckOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCheckOut.Location = new System.Drawing.Point(27, 401);
+            this.buttonCheckOut.Location = new System.Drawing.Point(3, 281);
             this.buttonCheckOut.Name = "buttonCheckOut";
-            this.buttonCheckOut.Size = new System.Drawing.Size(141, 64);
+            this.buttonCheckOut.Size = new System.Drawing.Size(204, 64);
             this.buttonCheckOut.TabIndex = 3;
             this.buttonCheckOut.Text = "Check Out";
             this.buttonCheckOut.UseVisualStyleBackColor = true;
@@ -85,9 +98,9 @@ namespace QuanLyBanHang.Gui
             // buttonCart
             // 
             this.buttonCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCart.Location = new System.Drawing.Point(27, 309);
+            this.buttonCart.Location = new System.Drawing.Point(3, 211);
             this.buttonCart.Name = "buttonCart";
-            this.buttonCart.Size = new System.Drawing.Size(141, 64);
+            this.buttonCart.Size = new System.Drawing.Size(204, 64);
             this.buttonCart.TabIndex = 2;
             this.buttonCart.Text = "List Order";
             this.buttonCart.UseVisualStyleBackColor = true;
@@ -96,9 +109,9 @@ namespace QuanLyBanHang.Gui
             // buttonProduct
             // 
             this.buttonProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonProduct.Location = new System.Drawing.Point(27, 219);
+            this.buttonProduct.Location = new System.Drawing.Point(3, 141);
             this.buttonProduct.Name = "buttonProduct";
-            this.buttonProduct.Size = new System.Drawing.Size(141, 64);
+            this.buttonProduct.Size = new System.Drawing.Size(204, 64);
             this.buttonProduct.TabIndex = 1;
             this.buttonProduct.Text = "Product";
             this.buttonProduct.UseVisualStyleBackColor = true;
@@ -169,7 +182,7 @@ namespace QuanLyBanHang.Gui
             // 
             this.button2.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(314, 4);
+            this.button2.Location = new System.Drawing.Point(760, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(254, 34);
             this.button2.TabIndex = 3;
@@ -181,7 +194,7 @@ namespace QuanLyBanHang.Gui
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(907, 8);
+            this.label5.Location = new System.Drawing.Point(656, 10);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 26);
             this.label5.TabIndex = 2;
@@ -191,7 +204,7 @@ namespace QuanLyBanHang.Gui
             // 
             this.labelTotalCart.AutoSize = true;
             this.labelTotalCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalCart.Location = new System.Drawing.Point(793, 8);
+            this.labelTotalCart.Location = new System.Drawing.Point(522, 10);
             this.labelTotalCart.Name = "labelTotalCart";
             this.labelTotalCart.Size = new System.Drawing.Size(45, 26);
             this.labelTotalCart.TabIndex = 1;
@@ -201,7 +214,7 @@ namespace QuanLyBanHang.Gui
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(589, 8);
+            this.label4.Location = new System.Drawing.Point(371, 10);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(145, 26);
             this.label4.TabIndex = 0;
@@ -255,13 +268,14 @@ namespace QuanLyBanHang.Gui
             this.panel2.Size = new System.Drawing.Size(826, 56);
             this.panel2.TabIndex = 11;
             // 
-            // textBoxCusphone
+            // labelCusname
             // 
-            this.textBoxCusphone.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCusphone.Location = new System.Drawing.Point(19, 14);
-            this.textBoxCusphone.Name = "textBoxCusphone";
-            this.textBoxCusphone.Size = new System.Drawing.Size(167, 32);
-            this.textBoxCusphone.TabIndex = 11;
+            this.labelCusname.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCusname.Location = new System.Drawing.Point(202, 14);
+            this.labelCusname.Name = "labelCusname";
+            this.labelCusname.Size = new System.Drawing.Size(437, 34);
+            this.labelCusname.TabIndex = 13;
+            this.labelCusname.Text = "no-customer";
             // 
             // buttonCheck
             // 
@@ -274,25 +288,13 @@ namespace QuanLyBanHang.Gui
             this.buttonCheck.UseVisualStyleBackColor = true;
             this.buttonCheck.Click += new System.EventHandler(this.buttonCheck_Click);
             // 
-            // labelCusname
+            // textBoxCusphone
             // 
-            this.labelCusname.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCusname.Location = new System.Drawing.Point(202, 14);
-            this.labelCusname.Name = "labelCusname";
-            this.labelCusname.Size = new System.Drawing.Size(437, 34);
-            this.labelCusname.TabIndex = 13;
-            this.labelCusname.Text = "no-customer";
-            // 
-            // buttonReset
-            // 
-            this.buttonReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonReset.Location = new System.Drawing.Point(27, 54);
-            this.buttonReset.Name = "buttonReset";
-            this.buttonReset.Size = new System.Drawing.Size(141, 132);
-            this.buttonReset.TabIndex = 4;
-            this.buttonReset.Text = "RESET";
-            this.buttonReset.UseVisualStyleBackColor = true;
-            this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
+            this.textBoxCusphone.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxCusphone.Location = new System.Drawing.Point(19, 14);
+            this.textBoxCusphone.Name = "textBoxCusphone";
+            this.textBoxCusphone.Size = new System.Drawing.Size(167, 32);
+            this.textBoxCusphone.TabIndex = 11;
             // 
             // Home
             // 
@@ -307,6 +309,7 @@ namespace QuanLyBanHang.Gui
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1900, 799);
             this.MinimizeBox = false;
