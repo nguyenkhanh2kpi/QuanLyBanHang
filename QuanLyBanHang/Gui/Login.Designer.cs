@@ -29,7 +29,7 @@ namespace QuanLyBanHang.Gui
         /// </summary>
         private void InitializeComponent()
         {
-            this.Register_Button = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.Login_button = new System.Windows.Forms.Button();
             this.passwordTxt = new System.Windows.Forms.TextBox();
             this.emailTxt = new System.Windows.Forms.TextBox();
@@ -41,23 +41,12 @@ namespace QuanLyBanHang.Gui
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // Register_Button
-            // 
-            this.Register_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Register_Button.Location = new System.Drawing.Point(274, 305);
-            this.Register_Button.Name = "Register_Button";
-            this.Register_Button.Size = new System.Drawing.Size(116, 36);
-            this.Register_Button.TabIndex = 12;
-            this.Register_Button.Text = "Register";
-            this.Register_Button.UseVisualStyleBackColor = true;
-            this.Register_Button.Click += new System.EventHandler(this.Register_Button_Click);
-            // 
             // Login_button
             // 
             this.Login_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Login_button.Location = new System.Drawing.Point(416, 305);
+            this.Login_button.Location = new System.Drawing.Point(407, 340);
             this.Login_button.Name = "Login_button";
-            this.Login_button.Size = new System.Drawing.Size(125, 36);
+            this.Login_button.Size = new System.Drawing.Size(132, 48);
             this.Login_button.TabIndex = 11;
             this.Login_button.Text = "Login";
             this.Login_button.UseVisualStyleBackColor = true;
@@ -66,7 +55,7 @@ namespace QuanLyBanHang.Gui
             // passwordTxt
             // 
             this.passwordTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordTxt.Location = new System.Drawing.Point(141, 208);
+            this.passwordTxt.Location = new System.Drawing.Point(137, 250);
             this.passwordTxt.Name = "passwordTxt";
             this.passwordTxt.PasswordChar = '*';
             this.passwordTxt.Size = new System.Drawing.Size(402, 36);
@@ -76,7 +65,7 @@ namespace QuanLyBanHang.Gui
             // 
             this.emailTxt.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.emailTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emailTxt.Location = new System.Drawing.Point(141, 117);
+            this.emailTxt.Location = new System.Drawing.Point(137, 159);
             this.emailTxt.Name = "emailTxt";
             this.emailTxt.Size = new System.Drawing.Size(402, 36);
             this.emailTxt.TabIndex = 9;
@@ -85,7 +74,7 @@ namespace QuanLyBanHang.Gui
             // 
             this.pictureBox3.Image = global::QuanLyBanHang.Properties.Resources.visibility;
             this.pictureBox3.InitialImage = null;
-            this.pictureBox3.Location = new System.Drawing.Point(559, 208);
+            this.pictureBox3.Location = new System.Drawing.Point(555, 250);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(44, 36);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -96,7 +85,7 @@ namespace QuanLyBanHang.Gui
             // pictureBox2
             // 
             this.pictureBox2.Image = global::QuanLyBanHang.Properties.Resources.password;
-            this.pictureBox2.Location = new System.Drawing.Point(99, 216);
+            this.pictureBox2.Location = new System.Drawing.Point(95, 258);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(36, 28);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -106,7 +95,7 @@ namespace QuanLyBanHang.Gui
             // pictureBox1
             // 
             this.pictureBox1.Image = global::QuanLyBanHang.Properties.Resources.user__2_;
-            this.pictureBox1.Location = new System.Drawing.Point(99, 117);
+            this.pictureBox1.Location = new System.Drawing.Point(95, 159);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(36, 31);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -117,14 +106,15 @@ namespace QuanLyBanHang.Gui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(707, 471);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.Register_Button);
             this.Controls.Add(this.Login_button);
             this.Controls.Add(this.passwordTxt);
             this.Controls.Add(this.emailTxt);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
@@ -142,7 +132,6 @@ namespace QuanLyBanHang.Gui
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button Register_Button;
         private System.Windows.Forms.Button Login_button;
         private System.Windows.Forms.TextBox passwordTxt;
         private System.Windows.Forms.TextBox emailTxt;

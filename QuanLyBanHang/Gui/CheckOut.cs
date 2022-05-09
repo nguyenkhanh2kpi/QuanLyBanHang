@@ -8,6 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using OfficeOpenXml;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace QuanLyBanHang.Gui
 {
@@ -62,7 +65,27 @@ namespace QuanLyBanHang.Gui
                 }
             }
             RemoveCart();
-            MessageBox.Show("Order is being processed");
+            SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.Title = "bill";
+            saveFile.Filter = "Excel (*.xlsx)|*.xlsx ";
+            saveFile.FileName = "C:/Users/KHANH/OneDrive/Desktop/DeTaiWinF/git-remake/QuanLyBanHang/bills/" + "order_"+order.order_id.ToString()+".xlsx";
+            ExportExcel(saveFile.FileName);
+            MessageBox.Show("SUCESS");
+            /*
+            if(saveFile.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    ExportExcel(saveFile.FileName);
+                    MessageBox.Show("SUCESS" + saveFile.FileName);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("INVALID" + ex.Message);
+
+                }
+            }
+            */
             this.Close();
         }
         private void ChangeStock(Product product, int quantity)
@@ -87,7 +110,7 @@ namespace QuanLyBanHang.Gui
             }
         }
 
-        public Order CreateOrder()
+        private Order CreateOrder()
         {
             using (var db = new QuanLyBanHang1Entities())
             {
@@ -100,7 +123,7 @@ namespace QuanLyBanHang.Gui
                 return order;
             }
         }
-        public OrderItem AddItem(Order oder, CartItem cartitem)
+        private OrderItem AddItem(Order oder, CartItem cartitem)
         {
             OrderItem oitem = new OrderItem();
             using (var db = new QuanLyBanHang1Entities())
@@ -114,5 +137,30 @@ namespace QuanLyBanHang.Gui
             }
             return oitem;
         }
+
+        private void ExportExcel(string path)
+        {
+            int total = 0;
+            Excel.Application application = new Excel.Application();
+            application.Application.Workbooks.Add(Type.Missing);
+            for (int i = 0; i < dataGridView1.Columns.Count; i++)
+            {
+                application.Cells[1, i + 1] = dataGridView1.Columns[i].HeaderText;
+            }
+            for(int i=0; i < dataGridView1.Rows.Count; i++)
+            {
+                for(int j=0; j<dataGridView1.Columns.Count; j++)
+                {
+                    application.Cells[i + 2, j + 1] = dataGridView1.Rows[i].Cells[j].Value;
+                }
+                total =total + Int32.Parse(dataGridView1.Rows[i].Cells[dataGridView1.Columns.Count-1].Value.ToString());
+            }
+            application.Cells[dataGridView1.Rows.Count+3, dataGridView1.Columns.Count-2] = "Total";
+            application.Cells[dataGridView1.Rows.Count + 3, dataGridView1.Columns.Count - 1] = total;
+            application.Columns.AutoFit();
+            application.ActiveWorkbook.SaveCopyAs(path);
+            application.ActiveWorkbook.Saved = true; 
+        }
+
     }
 }

@@ -13,7 +13,7 @@ namespace QuanLyBanHang.Gui
 {
     public partial class Admin : Form
     {
-        string manage="";
+        string manage = "";
         public Admin()
         {
             InitializeComponent();
@@ -21,8 +21,9 @@ namespace QuanLyBanHang.Gui
 
         private void buttonCategory_Click(object sender, EventArgs e)
         {
+            dataGridView1.ContextMenuStrip = contextMenuStripCatProduct;
             labeltitle.Text = "Category";
-            this.manage = "Category"; 
+            this.manage = "Category";
             using (var db = new QuanLyBanHang1Entities())
             {
                 var cat = (from c in db.Categories
@@ -33,16 +34,20 @@ namespace QuanLyBanHang.Gui
 
         private void buttonProduct_Click(object sender, EventArgs e)
         {
+            dataGridView1.ContextMenuStrip = contextMenuStripCatProduct;
             labeltitle.Text = "Product";
             this.manage = "Product";
             using (var db = new QuanLyBanHang1Entities())
             {
                 var pro = (from p in db.Products
-                           select new { ID = p.pro_id, 
-                               Name = p.pro_name, 
+                           select new
+                           {
+                               ID = p.pro_id,
+                               Name = p.pro_name,
                                Stock = p.units_instock,
                                Price = p.unit_price,
-                               Status = p.pro_status == "active" ? true : false }).ToList();
+                               Status = p.pro_status == "active" ? true : false
+                           }).ToList();
                 dataGridView1.DataSource = pro;
 
             }
@@ -50,6 +55,7 @@ namespace QuanLyBanHang.Gui
 
         private void buttonEmployee_Click(object sender, EventArgs e)
         {
+            dataGridView1.ContextMenuStrip = contextMenuStripPerson;
             labeltitle.Text = "Employee";
             this.manage = "Employee";
             using (var db = new QuanLyBanHang1Entities())
@@ -70,6 +76,7 @@ namespace QuanLyBanHang.Gui
 
         private void buttonCustomer_Click(object sender, EventArgs e)
         {
+            dataGridView1.ContextMenuStrip = contextMenuStripPerson;
             labeltitle.Text = "Customer";
             this.manage = "Customer";
             using (var db = new QuanLyBanHang1Entities())
@@ -87,23 +94,33 @@ namespace QuanLyBanHang.Gui
 
         private void buttonOrder_Click(object sender, EventArgs e)
         {
-            labeltitle.Text = "Orders";
-            this.manage = "Orders";
+            dataGridView1.ContextMenuStrip = contextMenuStrip1;
+            labeltitle.Text = "Order";
+            this.manage = "Order";
             using (var db = new QuanLyBanHang1Entities())
             {
                 var od = (from o in db.Orders
-                          select new { id = o.order_id,
+                          select new
+                          {
+                              id = o.order_id,
                               customer = o.Customer.e_name,
                               phone = o.Customer.phone_number,
-                              order_date = o.order_date, 
-                            }).ToList();
+                              order_date = o.order_date,
+                          }).ToList();
                 dataGridView1.DataSource = od;
             }
         }
 
+
+        // Sale click
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void Admin_Load(object sender, EventArgs e)
         {
-      
+
         }
 
 
@@ -112,9 +129,29 @@ namespace QuanLyBanHang.Gui
         {
             if (e.Button == MouseButtons.Right)
             {
-                if (e.RowIndex != -1 && e.ColumnIndex != -1)
+                if (labeltitle.Text == "Order")
                 {
-                    contextMenuStripCatProduct.Show();
+                    if (e.RowIndex != -1 && e.ColumnIndex != -1)
+                    {
+                        contextMenuStrip1.Show();
+                    }
+                }
+                else
+                {
+                    if(labeltitle.Text =="Customer" || labeltitle.Text == "Employee")
+                    {
+                        if (e.RowIndex != -1 && e.ColumnIndex != -1)
+                        {
+                            contextMenuStripPerson.Show();
+                        }
+                    }
+                    else
+                    {
+                        if (e.RowIndex != -1 && e.ColumnIndex != -1)
+                        {
+                            contextMenuStripCatProduct.Show();
+                        }
+                    }
                 }
             }
         }
@@ -128,11 +165,11 @@ namespace QuanLyBanHang.Gui
                 case "Customer":
                     break;
                 case "Employee":
-   
+
                     break;
                 case "Category":
                     var formc = new AddCat();
-                    formc.ShowDialog();     
+                    formc.ShowDialog();
                     break;
                 case "Product":
                     var formp = new AddProduct();
@@ -147,56 +184,140 @@ namespace QuanLyBanHang.Gui
 
         private void changeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-            switch (this.manage)
+            try
             {
-                case "Customer":
-                    break;
-                case "Employee":
+                switch (this.manage)
+                {
+                    case "Customer":
+                        break;
+                    case "Employee":
 
-                    break;
-                case "Category":
-                    string selected_cat_id = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
-                    var formc = new ChangeCategory(selected_cat_id);
-                    formc.ShowDialog();
-                    break;
-                case "Product":
-                    string selected_pro_id = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
-                    var formp = new ChangeProduct(selected_pro_id);
-                    formp.ShowDialog();
-                    break;
-                case "":
-                    MessageBox.Show("No object selected");
-                    break;
+                        break;
+                    case "Category":
+                        string selected_cat_id = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
+                        var formc = new ChangeCategory(selected_cat_id);
+                        formc.ShowDialog();
+                        break;
+                    case "Product":
+                        string selected_pro_id = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
+                        var formp = new ChangeProduct(selected_pro_id);
+                        formp.ShowDialog();
+                        break;
+                    case "":
+                        MessageBox.Show("No object selected");
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
 
         }
 
         private void removeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-       
-            switch (this.manage)
+            try
             {
-                case "Customer":
-                    break;
-                case "Employee":
+                switch (this.manage)
+                {
+                    case "Customer":
+                        break;
+                    case "Employee":
 
-                    break;
-                case "Category":
-                    string selected_cat_id = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
-                    var formc = new RemoveCategory(selected_cat_id);
-                    formc.ShowDialog();
-                    break;
-                case "Product":
-                    string selected_pro_id = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
-                    var formp = new RemoveProduct(selected_pro_id);
-                    formp.ShowDialog();
-                    break;
-                case "":
-                    MessageBox.Show("No object selected");
-                    break;
+                        break;
+                    case "Category":
+                        string selected_cat_id = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
+                        var formc = new RemoveCategory(selected_cat_id);
+                        formc.ShowDialog();
+                        break;
+                    case "Product":
+                        string selected_pro_id = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
+                        var formp = new RemoveProduct(selected_pro_id);
+                        formp.ShowDialog();
+                        break;
+                    case "":
+                        MessageBox.Show("No object selected");
+                        break;
+
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Fail");
+            }
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var loginform = new Login();
+            loginform.Show();
+            this.Visible = false;
+        }
+
+        private void detailToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var db = new QuanLyBanHang1Entities())
+            {
+                try
+                {
+                    if (dataGridView1.CurrentRow != null)
+                    {
+                        string order_id = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
+                        var order = db.Orders.FirstOrDefault(o => o.order_id.ToString() == order_id);
+                        var formDetail = new OrderDetail(order);
+                        formDetail.ShowDialog();
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
 
             }
+
         }
+
+        private void registerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            switch (manage)
+            {
+                case "Employee":
+                    var form = new Register();
+                    form.ShowDialog();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void removeToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+            switch (manage)
+            {
+                case "Employee":
+                    string selected_emp_id = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
+                    using(var db = new QuanLyBanHang1Entities())
+                    {
+                        var employee = db.Employees.FirstOrDefault(emp => emp.id.ToString() == selected_emp_id);
+                        var form1 = new RemoveEmp(employee);
+                        form1.ShowDialog();
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void salesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
     }
 }

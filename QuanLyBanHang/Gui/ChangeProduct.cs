@@ -143,10 +143,10 @@ namespace QuanLyBanHang.Gui
                 pro.pro_status = "active";
                 if (fileName != "")
                 {
-                    product.product_img = fileName;
+                    pro.product_img = fileName;
                     MoveFile(fileName, filePath);
                 }
-                product.decription = textBoxDescription.Text;
+                pro.decription = textBoxDescription.Text;
                 db.SaveChanges();
                 MessageBox.Show("Sucess");
                 this.Close();
@@ -166,6 +166,8 @@ namespace QuanLyBanHang.Gui
             }
             LoadProduct();
         }
+
+        // brow
 
         private void button1_Click(object sender, EventArgs e)
         {

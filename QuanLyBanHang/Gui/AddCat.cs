@@ -52,7 +52,7 @@ namespace QuanLyBanHang.Gui
             {
                 foreach (var c in db.Categories)
                 {
-                    if (c.cat_name == cat_name)
+                    if (c.cat_name.ToLower() == cat_name.ToLower())
                         return true;
                 }
                 return false;

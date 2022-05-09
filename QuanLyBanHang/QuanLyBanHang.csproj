@@ -45,11 +45,30 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="EPPlus, Version=6.0.3.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.6.0.3\lib\net452\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.Interfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.Interfaces.6.0.0\lib\net452\EPPlus.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.System.Drawing, Version=6.0.0.0, Culture=neutral, PublicKeyToken=2308d35469c9bac0, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.System.Drawing.6.0.0\lib\net452\EPPlus.System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.1.4.1\lib\net46\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -121,11 +140,23 @@
     <Compile Include="Gui\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gui\OrderDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\OrderDetail.Designer.cs">
+      <DependentUpon>OrderDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gui\ProductDetail.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Gui\ProductDetail.Designer.cs">
       <DependentUpon>ProductDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Register.Designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
     </Compile>
     <Compile Include="Gui\RemoveCategory.cs">
       <SubType>Form</SubType>
@@ -133,50 +164,60 @@
     <Compile Include="Gui\RemoveCategory.Designer.cs">
       <DependentUpon>RemoveCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gui\RemoveEmp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\RemoveEmp.Designer.cs">
+      <DependentUpon>RemoveEmp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gui\RemoveProduct.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Gui\RemoveProduct.Designer.cs">
       <DependentUpon>RemoveProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gui\Sales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Sales.Designer.cs">
+      <DependentUpon>Sales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\RegexString.cs" />
     <Compile Include="Models\CartItem.cs">
-      <DependentUpon>QuanLyBanHangEntities.tt</DependentUpon>
+      <DependentUpon>QuanLyBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Category.cs">
-      <DependentUpon>QuanLyBanHangEntities.tt</DependentUpon>
+      <DependentUpon>QuanLyBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Customer.cs">
-      <DependentUpon>QuanLyBanHangEntities.tt</DependentUpon>
+      <DependentUpon>QuanLyBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Employee.cs">
-      <DependentUpon>QuanLyBanHangEntities.tt</DependentUpon>
+      <DependentUpon>QuanLyBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Order.cs">
-      <DependentUpon>QuanLyBanHangEntities.tt</DependentUpon>
+      <DependentUpon>QuanLyBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\OrderItem.cs">
-      <DependentUpon>QuanLyBanHangEntities.tt</DependentUpon>
+      <DependentUpon>QuanLyBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Product.cs">
-      <DependentUpon>QuanLyBanHangEntities.tt</DependentUpon>
+      <DependentUpon>QuanLyBanHang.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\QuanLyBanHangEntities.Context.cs">
+    <Compile Include="Models\QuanLyBanHang.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>QuanLyBanHangEntities.Context.tt</DependentUpon>
+      <DependentUpon>QuanLyBanHang.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\QuanLyBanHangEntities.cs">
+    <Compile Include="Models\QuanLyBanHang.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>QuanLyBanHangEntities.tt</DependentUpon>
+      <DependentUpon>QuanLyBanHang.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\QuanLyBanHangEntities.Designer.cs">
+    <Compile Include="Models\QuanLyBanHang.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>QuanLyBanHangEntities.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>QuanLyBanHangEntities.tt</DependentUpon>
+      <DependentUpon>QuanLyBanHang.edmx</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -219,14 +260,26 @@
     <EmbeddedResource Include="Gui\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Gui\OrderDetail.resx">
+      <DependentUpon>OrderDetail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Gui\ProductDetail.resx">
       <DependentUpon>ProductDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gui\RemoveCategory.resx">
       <DependentUpon>RemoveCategory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Gui\RemoveEmp.resx">
+      <DependentUpon>RemoveEmp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Gui\RemoveProduct.resx">
       <DependentUpon>RemoveProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Sales.resx">
+      <DependentUpon>Sales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -244,12 +297,12 @@
     <EmbeddedResource Include="UserController\ProductControl.resx">
       <DependentUpon>ProductControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EntityDeploy Include="Models\QuanLyBanHangEntities.edmx">
+    <EntityDeploy Include="Models\QuanLyBanHang.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>QuanLyBanHangEntities.Designer.cs</LastGenOutput>
+      <LastGenOutput>QuanLyBanHang.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Models\QuanLyBanHangEntities.edmx.diagram">
-      <DependentUpon>QuanLyBanHangEntities.edmx</DependentUpon>
+    <None Include="Models\QuanLyBanHang.edmx.diagram">
+      <DependentUpon>QuanLyBanHang.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -265,18 +318,20 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Content Include="Models\QuanLyBanHangEntities.Context.tt">
+    <Content Include="Models\QuanLyBanHang.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QuanLyBanHangEntities.edmx</DependentUpon>
-      <LastGenOutput>QuanLyBanHangEntities.Context.cs</LastGenOutput>
+      <DependentUpon>QuanLyBanHang.edmx</DependentUpon>
+      <LastGenOutput>QuanLyBanHang.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\QuanLyBanHangEntities.tt">
+    <Content Include="Models\QuanLyBanHang.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QuanLyBanHangEntities.edmx</DependentUpon>
-      <LastGenOutput>QuanLyBanHangEntities.cs</LastGenOutput>
+      <DependentUpon>QuanLyBanHang.edmx</DependentUpon>
+      <LastGenOutput>QuanLyBanHang.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\LOGO.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\open-eye.png" />
     <None Include="Resources\visibility.png" />
     <None Include="Resources\password.png" />
