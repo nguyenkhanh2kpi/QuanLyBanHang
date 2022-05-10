@@ -29,6 +29,7 @@ namespace QuanLyBanHang.Gui
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductDetail));
             this.labelStatus = new System.Windows.Forms.Label();
             this.labelPrice = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -166,6 +167,7 @@ namespace QuanLyBanHang.Gui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ClientSize = new System.Drawing.Size(957, 524);
             this.Controls.Add(this.labelDescrip);
             this.Controls.Add(this.labelD);
@@ -179,6 +181,7 @@ namespace QuanLyBanHang.Gui
             this.Controls.Add(this.labelCategory);
             this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ProductDetail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProductDetail";

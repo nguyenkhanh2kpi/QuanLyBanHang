@@ -29,6 +29,7 @@ namespace QuanLyBanHang.Gui
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CheckOut));
             this.labelTotal = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBoxCusPhone = new System.Windows.Forms.TextBox();
@@ -114,9 +115,9 @@ namespace QuanLyBanHang.Gui
             this.buttonOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonOrder.Location = new System.Drawing.Point(667, 585);
             this.buttonOrder.Name = "buttonOrder";
-            this.buttonOrder.Size = new System.Drawing.Size(204, 41);
+            this.buttonOrder.Size = new System.Drawing.Size(204, 74);
             this.buttonOrder.TabIndex = 8;
-            this.buttonOrder.Text = "Bill";
+            this.buttonOrder.Text = "Export";
             this.buttonOrder.UseVisualStyleBackColor = true;
             this.buttonOrder.Click += new System.EventHandler(this.buttonOrder_Click);
             // 
@@ -136,12 +137,14 @@ namespace QuanLyBanHang.Gui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ClientSize = new System.Drawing.Size(1346, 728);
             this.Controls.Add(this.labelTotal);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonOrder);
             this.Controls.Add(this.dataGridView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CheckOut";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CheckOut";

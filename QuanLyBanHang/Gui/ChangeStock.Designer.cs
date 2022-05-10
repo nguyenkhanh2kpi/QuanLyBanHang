@@ -29,6 +29,7 @@ namespace QuanLyBanHang.Gui
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangeStock));
             this.textBoxStock = new System.Windows.Forms.TextBox();
             this.buttonChange = new System.Windows.Forms.Button();
             this.labelName = new System.Windows.Forms.Label();
@@ -77,11 +78,13 @@ namespace QuanLyBanHang.Gui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ClientSize = new System.Drawing.Size(654, 255);
             this.Controls.Add(this.textBoxStock);
             this.Controls.Add(this.buttonChange);
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ChangeStock";
             this.Text = "ChangeStock";
             this.ResumeLayout(false);

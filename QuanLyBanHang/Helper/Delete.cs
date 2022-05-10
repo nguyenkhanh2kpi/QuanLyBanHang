@@ -31,8 +31,10 @@ namespace QuanLyBanHang.Helper
         }
         public void DeleteEmployee(Employee employee)
         {
+
             using (var db = new QuanLyBanHang1Entities())
             {
+
                 var listorder = (from p in db.Orders
                                  where p.emp_id == employee.id
                                  select p).ToList();
@@ -43,6 +45,7 @@ namespace QuanLyBanHang.Helper
                 var emp = db.Employees.FirstOrDefault(p => p.id == employee.id);
                 db.Employees.Remove(emp);
                 db.SaveChanges();
+
             }
         }
         public void DeleteOrder(Order order)

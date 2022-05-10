@@ -139,7 +139,7 @@ namespace QuanLyBanHang.Gui
                 pro.cat_id = selected_cat.cat_id;
                 pro.quantity_perUnit = textboxUnit.Text;
                 pro.unit_price = Int32.Parse(textboxPrice.Text);
-                pro.units_instock = Int32.Parse(textboxPrice.Text);
+                pro.units_instock = Int32.Parse(textboxTock.Text);
                 pro.pro_status = "active";
                 if (fileName != "")
                 {

@@ -15,7 +15,6 @@ namespace QuanLyBanHang.Gui
     public partial class AddProduct : Form
     {
         private string fileName = "";
-        private Product product;
         public AddProduct()
         {
             InitializeComponent();
@@ -45,7 +44,6 @@ namespace QuanLyBanHang.Gui
             {
                 pictureBox1.ImageLocation = dlg.FileName;
                 fileName = dlg.SafeFileName;
-                MessageBox.Show(fileName);
             }
         }
         private void MoveFile(string fileName, string sPath)
@@ -129,20 +127,6 @@ namespace QuanLyBanHang.Gui
                 Add(fileName, pictureBox1.ImageLocation);
             }
         }
-        
-
-        ////////private void LoadProduct()
-        ////////{
-        ////////    Category selected_cat = getCat();
-        ////////    product.pro_name = textboxName.Text;
-        ////////    product.cat_id = selected_cat.cat_id;
-        ////////    product.quantity_perUnit = textboxUnit.Text;
-        ////////    product.unit_price = Int32.Parse(textboxPrice.Text);
-        ////////    product.units_instock = Int32.Parse(textboxPrice.Text);
-        ////////    product.pro_status = "active";
-        ////////    pictureBox1.Image = File.Exists($"../../../Images/Products/{product.product_img}") ? Image.FromFile($"../../../Images/Products/{product.product_img}") : Properties.Resources.user__2_;
-        ////////    product.decription = textBoxDescription.Text;
-        ////////}
         private void Add(string fileName, string filePath)
         {
             using(var db = new QuanLyBanHang1Entities())
@@ -153,7 +137,7 @@ namespace QuanLyBanHang.Gui
                 product.cat_id = selected_cat.cat_id;
                 product.quantity_perUnit = textboxUnit.Text;
                 product.unit_price = Int32.Parse(textboxPrice.Text);
-                product.units_instock = Int32.Parse(textboxPrice.Text);
+                product.units_instock = Int32.Parse(textboxTock.Text);
                 product.pro_status = "active";
                 if (fileName != "")
                 {

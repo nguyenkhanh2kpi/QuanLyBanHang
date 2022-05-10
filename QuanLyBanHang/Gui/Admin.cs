@@ -228,14 +228,30 @@ namespace QuanLyBanHang.Gui
 
                         break;
                     case "Category":
-                        string selected_cat_id = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
-                        var formc = new RemoveCategory(selected_cat_id);
-                        formc.ShowDialog();
+                        try
+                        {
+                            string selected_cat_id = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
+                            var formc = new RemoveCategory(selected_cat_id);
+                            formc.ShowDialog();
+                        }
+                        catch
+                        {
+                            MessageBox.Show("deleting relevant data");
+                        }
+                
                         break;
                     case "Product":
-                        string selected_pro_id = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
-                        var formp = new RemoveProduct(selected_pro_id);
-                        formp.ShowDialog();
+                        try
+                        {
+                            string selected_pro_id = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
+                            var formp = new RemoveProduct(selected_pro_id);
+                            formp.ShowDialog();
+                        }
+                        catch
+                        {
+                            MessageBox.Show("deleting relevant data");
+                        }
+            
                         break;
                     case "":
                         MessageBox.Show("No object selected");
@@ -304,22 +320,37 @@ namespace QuanLyBanHang.Gui
             switch (manage)
             {
                 case "Employee":
-                    string selected_emp_id = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
-                    using(var db = new QuanLyBanHang1Entities())
+                    try
                     {
-                        var employee = db.Employees.FirstOrDefault(emp => emp.id.ToString() == selected_emp_id);
-                        var form1 = new RemoveEmp(employee);
-                        form1.ShowDialog();
+                        string selected_emp_id = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
+                        using (var db = new QuanLyBanHang1Entities())
+                        {
+                            var employee = db.Employees.FirstOrDefault(emp => emp.id.ToString() == selected_emp_id);
+                            var form1 = new RemoveEmp(employee);
+                            form1.ShowDialog();
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show("deleting relevant data");
                     }
                     break;
                 case "Customer":
-                    string selected_cus_id = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
-                    using (var db = new QuanLyBanHang1Entities())
+                    try
                     {
-                        var customer = db.Customers.FirstOrDefault(emp => emp.id.ToString() == selected_cus_id);
-                        var form1 = new RemoveCustomer(customer);
-                        form1.ShowDialog();
+                        string selected_cus_id = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
+                        using (var db = new QuanLyBanHang1Entities())
+                        {
+                            var customer = db.Customers.FirstOrDefault(emp => emp.id.ToString() == selected_cus_id);
+                            var form1 = new RemoveCustomer(customer);
+                            form1.ShowDialog();
+                        }
                     }
+                    catch
+                    {
+                        MessageBox.Show("deleting relevant data");
+                    }
+        
                     break;
                 default:
                     break;

@@ -30,6 +30,7 @@ namespace QuanLyBanHang.Gui
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangeProduct));
             this.button1 = new System.Windows.Forms.Button();
             this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -219,6 +220,7 @@ namespace QuanLyBanHang.Gui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ClientSize = new System.Drawing.Size(800, 721);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
@@ -236,7 +238,9 @@ namespace QuanLyBanHang.Gui
             this.Controls.Add(this.textboxName);
             this.Controls.Add(this.catComboBox);
             this.Controls.Add(this.addButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ChangeProduct";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ChangeProduct";
             this.Load += new System.EventHandler(this.ChangeProduct_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

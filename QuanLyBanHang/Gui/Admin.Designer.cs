@@ -30,6 +30,7 @@ namespace QuanLyBanHang.Gui
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin));
             this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.buttonOrder = new System.Windows.Forms.Button();
@@ -72,62 +73,67 @@ namespace QuanLyBanHang.Gui
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.Azure;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(0, 488);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(199, 91);
             this.button2.TabIndex = 6;
             this.button2.Text = "Report";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // buttonOrder
             // 
+            this.buttonOrder.BackColor = System.Drawing.Color.Azure;
             this.buttonOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonOrder.Location = new System.Drawing.Point(3, 391);
             this.buttonOrder.Name = "buttonOrder";
             this.buttonOrder.Size = new System.Drawing.Size(199, 91);
             this.buttonOrder.TabIndex = 5;
             this.buttonOrder.Text = "Order";
-            this.buttonOrder.UseVisualStyleBackColor = true;
+            this.buttonOrder.UseVisualStyleBackColor = false;
             this.buttonOrder.Click += new System.EventHandler(this.buttonOrder_Click);
             // 
             // buttonCustomer
             // 
+            this.buttonCustomer.BackColor = System.Drawing.Color.Azure;
             this.buttonCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCustomer.Location = new System.Drawing.Point(3, 294);
             this.buttonCustomer.Name = "buttonCustomer";
             this.buttonCustomer.Size = new System.Drawing.Size(199, 91);
             this.buttonCustomer.TabIndex = 4;
             this.buttonCustomer.Text = "Customer";
-            this.buttonCustomer.UseVisualStyleBackColor = true;
+            this.buttonCustomer.UseVisualStyleBackColor = false;
             this.buttonCustomer.Click += new System.EventHandler(this.buttonCustomer_Click);
             // 
             // buttonEmployee
             // 
+            this.buttonEmployee.BackColor = System.Drawing.Color.Azure;
             this.buttonEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEmployee.Location = new System.Drawing.Point(3, 197);
             this.buttonEmployee.Name = "buttonEmployee";
             this.buttonEmployee.Size = new System.Drawing.Size(199, 91);
             this.buttonEmployee.TabIndex = 3;
             this.buttonEmployee.Text = "Employee";
-            this.buttonEmployee.UseVisualStyleBackColor = true;
+            this.buttonEmployee.UseVisualStyleBackColor = false;
             this.buttonEmployee.Click += new System.EventHandler(this.buttonEmployee_Click);
             // 
             // buttonProduct
             // 
+            this.buttonProduct.BackColor = System.Drawing.Color.Azure;
             this.buttonProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonProduct.Location = new System.Drawing.Point(3, 100);
             this.buttonProduct.Name = "buttonProduct";
             this.buttonProduct.Size = new System.Drawing.Size(199, 91);
             this.buttonProduct.TabIndex = 2;
             this.buttonProduct.Text = "Product";
-            this.buttonProduct.UseVisualStyleBackColor = true;
+            this.buttonProduct.UseVisualStyleBackColor = false;
             this.buttonProduct.Click += new System.EventHandler(this.buttonProduct_Click);
             // 
             // buttonCategory
             // 
-            this.buttonCategory.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonCategory.BackColor = System.Drawing.Color.Azure;
             this.buttonCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCategory.Location = new System.Drawing.Point(3, 3);
             this.buttonCategory.Name = "buttonCategory";
@@ -139,13 +145,14 @@ namespace QuanLyBanHang.Gui
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.Azure;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(3, 585);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(199, 91);
             this.button1.TabIndex = 0;
             this.button1.Text = "Logout";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridView1
@@ -246,10 +253,12 @@ namespace QuanLyBanHang.Gui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ClientSize = new System.Drawing.Size(1377, 758);
             this.Controls.Add(this.labeltitle);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Admin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";

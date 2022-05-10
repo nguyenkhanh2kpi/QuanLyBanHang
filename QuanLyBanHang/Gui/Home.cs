@@ -152,7 +152,6 @@ namespace QuanLyBanHang.Gui
                     {
                         cus = cusbyphone;
                         labelCusname.Text = cusbyphone.e_name;
-                        MessageBox.Show("Sucess");
                     }
                 }
             }
