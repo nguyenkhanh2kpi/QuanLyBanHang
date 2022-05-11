@@ -17,7 +17,9 @@ namespace QuanLyBanHang.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Order()
         {
+            this.OrderByCards = new HashSet<OrderByCard>();
             this.OrderItems = new HashSet<OrderItem>();
+            this.OrderShips = new HashSet<OrderShip>();
         }
     
         public int order_id { get; set; }
@@ -28,6 +30,10 @@ namespace QuanLyBanHang.Models
         public virtual Customer Customer { get; set; }
         public virtual Employee Employee { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<OrderByCard> OrderByCards { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderItem> OrderItems { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<OrderShip> OrderShips { get; set; }
     }
 }

@@ -68,3 +68,6 @@ C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\git-remake\QuanLyBanHang\QuanLyBanHang
 C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\git-remake\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.Gui.Report.resources
 C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\git-remake\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.Gui.AddCustomer.resources
 C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\git-remake\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.Gui.RemoveCustomer.resources
+C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\git-remake\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.Gui.OrderByShip.resources
+C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\git-remake\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.Gui.PayCard.resources
+C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\git-remake\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.Gui.GiveBack.resources

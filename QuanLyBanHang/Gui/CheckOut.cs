@@ -17,16 +17,27 @@ namespace QuanLyBanHang.Gui
     public partial class CheckOut : Form
     {
         private Employee employee;
-        private Customer customer;
+        private Customer customer = new Customer();
+        int  orderrr_id;
+        Order thisorder;
         public CheckOut(Employee emp, Customer cus)
         {
             InitializeComponent();
             this.employee = emp;
             this.customer = cus;
         }
+        public CheckOut(Employee emp)
+        {
+            InitializeComponent();
+            this.employee = emp;
+            this.customer = null;
+        }
 
         private void CheckOut_Load(object sender, EventArgs e)
         {
+            this.thisorder=  CreateOrder();
+            comboBoxPayment.SelectedIndex = 0;
+            buttonOrder.Enabled = false;
             using (var db = new QuanLyBanHang1Entities())
             {
                 int total = 0;
@@ -45,15 +56,18 @@ namespace QuanLyBanHang.Gui
                     Price = a.price,
                     Total = a.quantity * a.price,
                 }).ToList();
-                textBoxCusName.Text = customer.e_name;
-                textBoxCusPhone.Text = customer.phone_number.ToString();
+                if (customer != null)
+                {
+                    textBoxCusName.Text = customer.e_name;
+                    textBoxCusPhone.Text = customer.phone_number.ToString();
+                }
                 labelTotal.Text = total.ToString();
             }
         }
 
         private void buttonOrder_Click(object sender, EventArgs e)
         {
-            var order = CreateOrder();
+            var order = thisorder;
             using (var db = new QuanLyBanHang1Entities())
             {
                 var cartitems = db.CartItems.ToList();
@@ -115,11 +129,20 @@ namespace QuanLyBanHang.Gui
             using (var db = new QuanLyBanHang1Entities())
             {
                 Order order = new Order();
-                order.cus_id = customer.id;
+                if (customer == null)
+                {
+                    order.cus_id = null;
+                }
+                else
+                {
+                    order.cus_id = customer.id;
+                }
+  
                 order.emp_id = employee.id;
                 order.order_date = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day);
                 db.Orders.Add(order);
                 db.SaveChanges();
+                this.orderrr_id = order.order_id;
                 return order;
             }
         }
@@ -162,5 +185,27 @@ namespace QuanLyBanHang.Gui
             application.ActiveWorkbook.Saved = true; 
         }
 
+
+        // ok click
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            switch (comboBoxPayment.SelectedIndex)
+            {
+                case 0:
+                    buttonOrder.Enabled = true;
+                    break;
+                case 1:
+                    var card = new PayCard(this.orderrr_id);
+                    card.ShowDialog();
+                    buttonOrder.Enabled = true;
+                    break;
+                case 2:
+                    var ship = new OrderByShip(this.orderrr_id);
+                    ship.ShowDialog();
+                    buttonOrder.Enabled = true;
+                    break;
+            }
+        }
     }
 }

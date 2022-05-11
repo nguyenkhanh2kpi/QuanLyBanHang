@@ -121,7 +121,8 @@ namespace QuanLyBanHang.Gui
 
         private void Admin_Load(object sender, EventArgs e)
         {
-
+            this.dataGridView1.DefaultCellStyle.Font = new Font("Tahoma", 13);
+            this.dataGridView1.DefaultCellStyle.BackColor = Color.Beige;
         }
 
 
@@ -362,7 +363,9 @@ namespace QuanLyBanHang.Gui
 
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
-
+        }
     }
 }

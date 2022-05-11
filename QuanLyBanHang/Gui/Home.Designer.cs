@@ -50,9 +50,11 @@ namespace QuanLyBanHang.Gui
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonNocus = new System.Windows.Forms.Button();
             this.labelCusname = new System.Windows.Forms.Label();
             this.buttonCheck = new System.Windows.Forms.Button();
             this.textBoxCusphone = new System.Windows.Forms.TextBox();
+            this.buttonGiveBack = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panelCart2.SuspendLayout();
@@ -63,6 +65,7 @@ namespace QuanLyBanHang.Gui
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Khaki;
+            this.panel1.Controls.Add(this.buttonGiveBack);
             this.panel1.Controls.Add(this.buttonReset);
             this.panel1.Controls.Add(this.buttonCheckOut);
             this.panel1.Controls.Add(this.buttonCart);
@@ -260,6 +263,7 @@ namespace QuanLyBanHang.Gui
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Tan;
+            this.panel2.Controls.Add(this.buttonNocus);
             this.panel2.Controls.Add(this.labelCusname);
             this.panel2.Controls.Add(this.buttonCheck);
             this.panel2.Controls.Add(this.textBoxCusphone);
@@ -268,19 +272,30 @@ namespace QuanLyBanHang.Gui
             this.panel2.Size = new System.Drawing.Size(826, 56);
             this.panel2.TabIndex = 11;
             // 
+            // buttonNocus
+            // 
+            this.buttonNocus.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonNocus.Location = new System.Drawing.Point(674, 3);
+            this.buttonNocus.Name = "buttonNocus";
+            this.buttonNocus.Size = new System.Drawing.Size(141, 47);
+            this.buttonNocus.TabIndex = 14;
+            this.buttonNocus.Text = "Quick";
+            this.buttonNocus.UseVisualStyleBackColor = true;
+            this.buttonNocus.Click += new System.EventHandler(this.buttonNocus_Click);
+            // 
             // labelCusname
             // 
             this.labelCusname.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCusname.Location = new System.Drawing.Point(202, 14);
+            this.labelCusname.Location = new System.Drawing.Point(202, 12);
             this.labelCusname.Name = "labelCusname";
-            this.labelCusname.Size = new System.Drawing.Size(437, 34);
+            this.labelCusname.Size = new System.Drawing.Size(319, 34);
             this.labelCusname.TabIndex = 13;
             this.labelCusname.Text = "no-customer";
             // 
             // buttonCheck
             // 
             this.buttonCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCheck.Location = new System.Drawing.Point(661, 6);
+            this.buttonCheck.Location = new System.Drawing.Point(527, 3);
             this.buttonCheck.Name = "buttonCheck";
             this.buttonCheck.Size = new System.Drawing.Size(141, 47);
             this.buttonCheck.TabIndex = 12;
@@ -295,6 +310,17 @@ namespace QuanLyBanHang.Gui
             this.textBoxCusphone.Name = "textBoxCusphone";
             this.textBoxCusphone.Size = new System.Drawing.Size(167, 32);
             this.textBoxCusphone.TabIndex = 11;
+            // 
+            // buttonGiveBack
+            // 
+            this.buttonGiveBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonGiveBack.Location = new System.Drawing.Point(3, 351);
+            this.buttonGiveBack.Name = "buttonGiveBack";
+            this.buttonGiveBack.Size = new System.Drawing.Size(204, 64);
+            this.buttonGiveBack.TabIndex = 5;
+            this.buttonGiveBack.Text = "Give Back";
+            this.buttonGiveBack.UseVisualStyleBackColor = true;
+            this.buttonGiveBack.Click += new System.EventHandler(this.buttonGiveBack_Click);
             // 
             // Home
             // 
@@ -356,5 +382,7 @@ namespace QuanLyBanHang.Gui
         private System.Windows.Forms.Button buttonCheck;
         private System.Windows.Forms.TextBox textBoxCusphone;
         private System.Windows.Forms.Button buttonReset;
+        private System.Windows.Forms.Button buttonNocus;
+        private System.Windows.Forms.Button buttonGiveBack;
     }
 }

@@ -136,6 +136,7 @@ namespace QuanLyBanHang.Gui
                 Category selected_cat = getCat();
                 product.cat_id = selected_cat.cat_id;
                 product.quantity_perUnit = textboxUnit.Text;
+                product.import_price = Int32.Parse(textBoxImportPrice.Text);
                 product.unit_price = Int32.Parse(textboxPrice.Text);
                 product.units_instock = Int32.Parse(textboxTock.Text);
                 product.pro_status = "active";

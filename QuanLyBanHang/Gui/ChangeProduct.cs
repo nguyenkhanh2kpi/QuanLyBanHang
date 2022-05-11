@@ -118,6 +118,7 @@ namespace QuanLyBanHang.Gui
         {
             textboxName.Text = product.pro_name;
             textboxUnit.Text = product.quantity_perUnit;
+            textBoxImportPrice.Text = product.import_price.ToString();
             textboxPrice.Text = product.unit_price.ToString();
             textboxTock.Text = product.units_instock.ToString();
             product.pro_status = "active";
@@ -138,6 +139,7 @@ namespace QuanLyBanHang.Gui
                 Category selected_cat = getCat();
                 pro.cat_id = selected_cat.cat_id;
                 pro.quantity_perUnit = textboxUnit.Text;
+                pro.import_price = Int32.Parse(textBoxImportPrice.Text);
                 pro.unit_price = Int32.Parse(textboxPrice.Text);
                 pro.units_instock = Int32.Parse(textboxTock.Text);
                 pro.pro_status = "active";

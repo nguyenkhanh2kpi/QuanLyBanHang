@@ -39,6 +39,9 @@ namespace QuanLyBanHang.Gui
             this.label1 = new System.Windows.Forms.Label();
             this.buttonOrder = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.comboBoxPayment = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -47,7 +50,7 @@ namespace QuanLyBanHang.Gui
             // 
             this.labelTotal.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.labelTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotal.Location = new System.Drawing.Point(667, 528);
+            this.labelTotal.Location = new System.Drawing.Point(672, 648);
             this.labelTotal.Name = "labelTotal";
             this.labelTotal.Size = new System.Drawing.Size(204, 36);
             this.labelTotal.TabIndex = 12;
@@ -104,7 +107,7 @@ namespace QuanLyBanHang.Gui
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(561, 528);
+            this.label1.Location = new System.Drawing.Point(531, 653);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 26);
             this.label1.TabIndex = 9;
@@ -113,9 +116,9 @@ namespace QuanLyBanHang.Gui
             // buttonOrder
             // 
             this.buttonOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonOrder.Location = new System.Drawing.Point(667, 585);
+            this.buttonOrder.Location = new System.Drawing.Point(921, 648);
             this.buttonOrder.Name = "buttonOrder";
-            this.buttonOrder.Size = new System.Drawing.Size(204, 74);
+            this.buttonOrder.Size = new System.Drawing.Size(258, 36);
             this.buttonOrder.TabIndex = 8;
             this.buttonOrder.Text = "Export";
             this.buttonOrder.UseVisualStyleBackColor = true;
@@ -133,12 +136,49 @@ namespace QuanLyBanHang.Gui
             this.dataGridView1.Size = new System.Drawing.Size(709, 404);
             this.dataGridView1.TabIndex = 7;
             // 
+            // comboBoxPayment
+            // 
+            this.comboBoxPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxPayment.FormattingEnabled = true;
+            this.comboBoxPayment.Items.AddRange(new object[] {
+            "direct payment",
+            "payment via card",
+            "pay on delivery"});
+            this.comboBoxPayment.Location = new System.Drawing.Point(671, 560);
+            this.comboBoxPayment.Name = "comboBoxPayment";
+            this.comboBoxPayment.Size = new System.Drawing.Size(205, 34);
+            this.comboBoxPayment.TabIndex = 13;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(921, 560);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(258, 36);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "OK";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(531, 560);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(99, 26);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Payment";
+            // 
             // CheckOut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ClientSize = new System.Drawing.Size(1346, 728);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.comboBoxPayment);
             this.Controls.Add(this.labelTotal);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
@@ -168,5 +208,8 @@ namespace QuanLyBanHang.Gui
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonOrder;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox comboBoxPayment;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label4;
     }
 }

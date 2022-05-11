@@ -50,6 +50,7 @@ namespace QuanLyBanHang.Gui
                     db.Employees.Add(per);
                     db.SaveChanges();
                     MessageBox.Show("Add Employee Success");
+                    this.Close();
                 }
 
             }

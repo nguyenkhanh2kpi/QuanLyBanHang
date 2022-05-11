@@ -48,6 +48,8 @@ namespace QuanLyBanHang.Gui
             this.addButton = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBoxImportPrice = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -55,7 +57,7 @@ namespace QuanLyBanHang.Gui
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(485, 541);
+            this.button1.Location = new System.Drawing.Point(485, 593);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 57);
@@ -67,7 +69,7 @@ namespace QuanLyBanHang.Gui
             // textBoxDescription
             // 
             this.textBoxDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDescription.Location = new System.Drawing.Point(203, 323);
+            this.textBoxDescription.Location = new System.Drawing.Point(203, 375);
             this.textBoxDescription.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxDescription.Multiline = true;
             this.textBoxDescription.Name = "textBoxDescription";
@@ -78,7 +80,7 @@ namespace QuanLyBanHang.Gui
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.label6.Location = new System.Drawing.Point(12, 313);
+            this.label6.Location = new System.Drawing.Point(12, 365);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(121, 26);
             this.label6.TabIndex = 48;
@@ -88,7 +90,7 @@ namespace QuanLyBanHang.Gui
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.label7.Location = new System.Drawing.Point(12, 483);
+            this.label7.Location = new System.Drawing.Point(12, 535);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(80, 26);
             this.label7.TabIndex = 47;
@@ -98,7 +100,7 @@ namespace QuanLyBanHang.Gui
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.label5.Location = new System.Drawing.Point(12, 259);
+            this.label5.Location = new System.Drawing.Point(12, 311);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(87, 26);
             this.label5.TabIndex = 46;
@@ -108,7 +110,7 @@ namespace QuanLyBanHang.Gui
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.label4.Location = new System.Drawing.Point(12, 207);
+            this.label4.Location = new System.Drawing.Point(12, 259);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 26);
             this.label4.TabIndex = 45;
@@ -147,7 +149,7 @@ namespace QuanLyBanHang.Gui
             // textboxTock
             // 
             this.textboxTock.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textboxTock.Location = new System.Drawing.Point(203, 263);
+            this.textboxTock.Location = new System.Drawing.Point(203, 315);
             this.textboxTock.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textboxTock.Name = "textboxTock";
             this.textboxTock.Size = new System.Drawing.Size(432, 32);
@@ -156,7 +158,7 @@ namespace QuanLyBanHang.Gui
             // textboxPrice
             // 
             this.textboxPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textboxPrice.Location = new System.Drawing.Point(203, 211);
+            this.textboxPrice.Location = new System.Drawing.Point(203, 263);
             this.textboxPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textboxPrice.Name = "textboxPrice";
             this.textboxPrice.Size = new System.Drawing.Size(432, 32);
@@ -209,19 +211,40 @@ namespace QuanLyBanHang.Gui
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBox1.Location = new System.Drawing.Point(203, 496);
+            this.pictureBox1.Location = new System.Drawing.Point(203, 548);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(251, 166);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 50;
             this.pictureBox1.TabStop = false;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.label8.Location = new System.Drawing.Point(12, 212);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(130, 26);
+            this.label8.TabIndex = 53;
+            this.label8.Text = "Import Price";
+            // 
+            // textBoxImportPrice
+            // 
+            this.textBoxImportPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxImportPrice.Location = new System.Drawing.Point(203, 215);
+            this.textBoxImportPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxImportPrice.Name = "textBoxImportPrice";
+            this.textBoxImportPrice.Size = new System.Drawing.Size(432, 32);
+            this.textBoxImportPrice.TabIndex = 52;
+            // 
             // ChangeProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.ClientSize = new System.Drawing.Size(800, 721);
+            this.ClientSize = new System.Drawing.Size(800, 741);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.textBoxImportPrice);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBoxDescription);
@@ -269,5 +292,7 @@ namespace QuanLyBanHang.Gui
         private System.Windows.Forms.ComboBox catComboBox;
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBoxImportPrice;
     }
 }
