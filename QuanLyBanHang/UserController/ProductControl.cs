@@ -33,6 +33,8 @@ namespace QuanLyBanHang.UserController
             pictureBox1.ImageLocation = File.Exists(path) ? path : "../../Resources/no-avatar.png";
             labelProduct.Text = product.pro_name;
             labelPrice.Text = product.unit_price.ToString();
+            labelUnit.Text = product.quantity_perUnit;
+        
         }
 
         // create cartitem
@@ -43,7 +45,6 @@ namespace QuanLyBanHang.UserController
             item.quantity = quantity;
             item.price = pro.unit_price * quantity;
             return item;
-
         }
 
 
@@ -95,6 +96,11 @@ namespace QuanLyBanHang.UserController
         {
             var f = new ProductDetail(product);
             f.Show();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

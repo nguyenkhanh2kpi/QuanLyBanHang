@@ -111,6 +111,12 @@
     <Compile Include="Gui\Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gui\BestSeller.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\BestSeller.designer.cs">
+      <DependentUpon>BestSeller.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gui\ChangeCategory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,12 @@
     </Compile>
     <Compile Include="Gui\CheckOut.Designer.cs">
       <DependentUpon>CheckOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\GiftCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\GiftCard.designer.cs">
+      <DependentUpon>GiftCard.cs</DependentUpon>
     </Compile>
     <Compile Include="Gui\GiveBack.cs">
       <SubType>Form</SubType>
@@ -283,6 +295,9 @@
     <EmbeddedResource Include="Gui\Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Gui\BestSeller.resx">
+      <DependentUpon>BestSeller.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Gui\ChangeCategory.resx">
       <DependentUpon>ChangeCategory.cs</DependentUpon>
     </EmbeddedResource>
@@ -294,6 +309,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Gui\CheckOut.resx">
       <DependentUpon>CheckOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\GiftCard.resx">
+      <DependentUpon>GiftCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gui\GiveBack.resx">
       <DependentUpon>GiveBack.cs</DependentUpon>

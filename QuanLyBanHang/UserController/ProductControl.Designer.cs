@@ -35,6 +35,8 @@ namespace QuanLyBanHang.UserController
             this.label1 = new System.Windows.Forms.Label();
             this.labelPrice = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.labelUnit = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,12 +96,33 @@ namespace QuanLyBanHang.UserController
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(230, 202);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(95, 25);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Unit";
+            // 
+            // labelUnit
+            // 
+            this.labelUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUnit.Location = new System.Drawing.Point(234, 243);
+            this.labelUnit.Name = "labelUnit";
+            this.labelUnit.Size = new System.Drawing.Size(95, 25);
+            this.labelUnit.TabIndex = 7;
+            this.labelUnit.Text = "xx";
+            this.labelUnit.Click += new System.EventHandler(this.label3_Click);
+            // 
             // ProductControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Bisque;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.labelUnit);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.labelPrice);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelProduct);
@@ -121,5 +144,7 @@ namespace QuanLyBanHang.UserController
         private System.Windows.Forms.Label labelProduct;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelPrice;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelUnit;
     }
 }

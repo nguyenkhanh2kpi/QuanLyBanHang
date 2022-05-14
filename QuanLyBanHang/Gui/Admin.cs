@@ -367,5 +367,17 @@ namespace QuanLyBanHang.Gui
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var form = new BestSellerForm();
+            form.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            var form = new GiftCard();
+            form.ShowDialog();
+        }
     }
 }

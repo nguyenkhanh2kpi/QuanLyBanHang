@@ -45,7 +45,7 @@ namespace QuanLyBanHang.Gui
             // textBoxName
             // 
             this.textBoxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxName.Location = new System.Drawing.Point(270, 80);
+            this.textBoxName.Location = new System.Drawing.Point(290, 80);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(300, 32);
             this.textBoxName.TabIndex = 0;
@@ -73,7 +73,7 @@ namespace QuanLyBanHang.Gui
             // textBoxAddress
             // 
             this.textBoxAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxAddress.Location = new System.Drawing.Point(270, 154);
+            this.textBoxAddress.Location = new System.Drawing.Point(290, 154);
             this.textBoxAddress.Name = "textBoxAddress";
             this.textBoxAddress.Size = new System.Drawing.Size(300, 32);
             this.textBoxAddress.TabIndex = 2;
@@ -91,7 +91,7 @@ namespace QuanLyBanHang.Gui
             // textBoxPhone
             // 
             this.textBoxPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPhone.Location = new System.Drawing.Point(270, 223);
+            this.textBoxPhone.Location = new System.Drawing.Point(290, 223);
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(300, 32);
             this.textBoxPhone.TabIndex = 4;
@@ -109,7 +109,7 @@ namespace QuanLyBanHang.Gui
             // textBoxCard
             // 
             this.textBoxCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCard.Location = new System.Drawing.Point(270, 293);
+            this.textBoxCard.Location = new System.Drawing.Point(290, 293);
             this.textBoxCard.Name = "textBoxCard";
             this.textBoxCard.Size = new System.Drawing.Size(300, 32);
             this.textBoxCard.TabIndex = 6;
@@ -127,7 +127,7 @@ namespace QuanLyBanHang.Gui
             // textBoxBank
             // 
             this.textBoxBank.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxBank.Location = new System.Drawing.Point(270, 362);
+            this.textBoxBank.Location = new System.Drawing.Point(290, 362);
             this.textBoxBank.Name = "textBoxBank";
             this.textBoxBank.Size = new System.Drawing.Size(300, 32);
             this.textBoxBank.TabIndex = 8;
@@ -135,15 +135,15 @@ namespace QuanLyBanHang.Gui
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(328, 465);
+            this.button1.Location = new System.Drawing.Point(353, 457);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(186, 31);
+            this.button1.Size = new System.Drawing.Size(186, 44);
             this.button1.TabIndex = 10;
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // OrderShip
+            // OrderByShip
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -159,7 +159,7 @@ namespace QuanLyBanHang.Gui
             this.Controls.Add(this.textBoxAddress);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxName);
-            this.Name = "OrderShip";
+            this.Name = "OrderByShip";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OrderShip";
             this.Load += new System.EventHandler(this.OrderShip_Load);

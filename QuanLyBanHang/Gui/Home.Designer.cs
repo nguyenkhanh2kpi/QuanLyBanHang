@@ -31,6 +31,7 @@ namespace QuanLyBanHang.Gui
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonGiveBack = new System.Windows.Forms.Button();
             this.buttonReset = new System.Windows.Forms.Button();
             this.buttonCheckOut = new System.Windows.Forms.Button();
             this.buttonCart = new System.Windows.Forms.Button();
@@ -54,7 +55,6 @@ namespace QuanLyBanHang.Gui
             this.labelCusname = new System.Windows.Forms.Label();
             this.buttonCheck = new System.Windows.Forms.Button();
             this.textBoxCusphone = new System.Windows.Forms.TextBox();
-            this.buttonGiveBack = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panelCart2.SuspendLayout();
@@ -74,6 +74,17 @@ namespace QuanLyBanHang.Gui
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(210, 574);
             this.panel1.TabIndex = 0;
+            // 
+            // buttonGiveBack
+            // 
+            this.buttonGiveBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonGiveBack.Location = new System.Drawing.Point(3, 351);
+            this.buttonGiveBack.Name = "buttonGiveBack";
+            this.buttonGiveBack.Size = new System.Drawing.Size(204, 64);
+            this.buttonGiveBack.TabIndex = 5;
+            this.buttonGiveBack.Text = "Give Back";
+            this.buttonGiveBack.UseVisualStyleBackColor = true;
+            this.buttonGiveBack.Click += new System.EventHandler(this.buttonGiveBack_Click);
             // 
             // buttonReset
             // 
@@ -127,7 +138,7 @@ namespace QuanLyBanHang.Gui
             this.flowLayoutPanel1.Controls.Add(this.button1);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(264, 108);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1386, 574);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1346, 574);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // button1
@@ -153,7 +164,7 @@ namespace QuanLyBanHang.Gui
             // buttonLogout
             // 
             this.buttonLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLogout.Location = new System.Drawing.Point(1426, 12);
+            this.buttonLogout.Location = new System.Drawing.Point(1416, 12);
             this.buttonLogout.Name = "buttonLogout";
             this.buttonLogout.Size = new System.Drawing.Size(100, 47);
             this.buttonLogout.TabIndex = 4;
@@ -311,23 +322,12 @@ namespace QuanLyBanHang.Gui
             this.textBoxCusphone.Size = new System.Drawing.Size(167, 32);
             this.textBoxCusphone.TabIndex = 11;
             // 
-            // buttonGiveBack
-            // 
-            this.buttonGiveBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonGiveBack.Location = new System.Drawing.Point(3, 351);
-            this.buttonGiveBack.Name = "buttonGiveBack";
-            this.buttonGiveBack.Size = new System.Drawing.Size(204, 64);
-            this.buttonGiveBack.TabIndex = 5;
-            this.buttonGiveBack.Text = "Give Back";
-            this.buttonGiveBack.UseVisualStyleBackColor = true;
-            this.buttonGiveBack.Click += new System.EventHandler(this.buttonGiveBack_Click);
-            // 
             // Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.ClientSize = new System.Drawing.Size(1882, 752);
+            this.ClientSize = new System.Drawing.Size(1575, 754);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelCart1);
             this.Controls.Add(this.panelCart2);
@@ -338,9 +338,9 @@ namespace QuanLyBanHang.Gui
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1900, 799);
+            this.MaximumSize = new System.Drawing.Size(1593, 801);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1900, 799);
+            this.MinimumSize = new System.Drawing.Size(1593, 801);
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";

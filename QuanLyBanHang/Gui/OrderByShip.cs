@@ -27,7 +27,7 @@ namespace QuanLyBanHang.Gui
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(textBoxAddress.Text!=null && textBoxBank.Text!=null && textBoxCard.Text !=null && textBoxName!=null && textBoxPhone.Text != null)
+            if(textBoxAddress.Text.Trim()!=null && textBoxBank.Text.Trim()!=null && textBoxCard.Text.Trim() !=null && textBoxName.Text.Trim()!=null && textBoxPhone.Text.Trim() != null)
             {
                 using(var db= new QuanLyBanHang1Entities())
                 {
