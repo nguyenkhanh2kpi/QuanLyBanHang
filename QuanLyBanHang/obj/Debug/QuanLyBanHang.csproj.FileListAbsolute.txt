@@ -73,3 +73,16 @@ C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\git-remake\QuanLyBanHang\QuanLyBanHang
 C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\git-remake\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.Gui.GiveBack.resources
 C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\git-remake\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.Gui.BestSellerForm.resources
 C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\git-remake\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.Gui.GiftCard.resources
+C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\git-remake\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.Gui.Start.resources
+C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\git-remake\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.Gui.Warehouse.resources
+C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\git-remake\QuanLyBanHang\QuanLyBanHang\bin\Debug\AForge.dll
+C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\git-remake\QuanLyBanHang\QuanLyBanHang\bin\Debug\AForge.Video.DirectShow.dll
+C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\git-remake\QuanLyBanHang\QuanLyBanHang\bin\Debug\AForge.Video.dll
+C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\git-remake\QuanLyBanHang\QuanLyBanHang\bin\Debug\zxing.dll
+C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\git-remake\QuanLyBanHang\QuanLyBanHang\bin\Debug\zxing.presentation.dll
+C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\git-remake\QuanLyBanHang\QuanLyBanHang\bin\Debug\AForge.xml
+C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\git-remake\QuanLyBanHang\QuanLyBanHang\bin\Debug\AForge.Video.xml
+C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\git-remake\QuanLyBanHang\QuanLyBanHang\bin\Debug\AForge.Video.DirectShow.xml
+C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\git-remake\QuanLyBanHang\QuanLyBanHang\bin\Debug\zxing.xml
+C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\git-remake\QuanLyBanHang\QuanLyBanHang\bin\Debug\zxing.presentation.xml
+C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\git-remake\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.Gui.ScanForm.resources

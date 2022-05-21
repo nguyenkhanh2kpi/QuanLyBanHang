@@ -136,13 +136,13 @@ namespace QuanLyBanHang.Gui
             }
             else
             {
-                using(var db = new QuanLyBanHang1Entities())
+                using (var db = new QuanLyBanHang1Entities())
                 {
                     var cusbyphone = db.Customers.FirstOrDefault(s => s.phone_number == textBoxCusphone.Text);
                     if (cusbyphone == null)
                     {
-                         DialogResult dlr =  MessageBox.Show(" 'Yes' to create a customer or 'No' to retry","Customer", MessageBoxButtons.YesNo);
-                        if(dlr == DialogResult.Yes)
+                        DialogResult dlr = MessageBox.Show(" 'Yes' to create a customer or 'No' to retry", "Customer", MessageBoxButtons.YesNo);
+                        if (dlr == DialogResult.Yes)
                         {
                             var form = new AddCustomer(textBoxCusphone.Text);
                             form.ShowDialog();
@@ -164,7 +164,7 @@ namespace QuanLyBanHang.Gui
 
         private void buttonCheckOut_Click(object sender, EventArgs e)
         {
-            if(textBoxCusphone.Enabled == false)
+            if (textBoxCusphone.Enabled == false)
             {
                 buttonCart_Click(sender, e);
                 var form = new CheckOut(this.emp);
@@ -189,7 +189,7 @@ namespace QuanLyBanHang.Gui
         {
             textBoxCusphone.Enabled = true;
             comboBox1.Items.Clear();
-            Home_Load(sender,e);
+            Home_Load(sender, e);
         }
 
         private void buttonNocus_Click(object sender, EventArgs e)
@@ -201,6 +201,14 @@ namespace QuanLyBanHang.Gui
         {
             var give = new GiveBack();
             give.ShowDialog();
+        }
+
+        private void buttonScan_Click(object sender, EventArgs e)
+        {
+            var form = new ScanForm();
+            form.ShowDialog();
+            textBoxCusphone.Text = form.code;
+            textBoxCusphone.Refresh();
         }
     }
 }

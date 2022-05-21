@@ -18,7 +18,6 @@ namespace QuanLyBanHang.Gui
         {
             InitializeComponent();
         }
-
         private void buttonCategory_Click(object sender, EventArgs e)
         {
             dataGridView1.ContextMenuStrip = contextMenuStripCatProduct;
@@ -31,6 +30,7 @@ namespace QuanLyBanHang.Gui
                 dataGridView1.DataSource = cat;
             }
         }
+
 
         private void buttonProduct_Click(object sender, EventArgs e)
         {

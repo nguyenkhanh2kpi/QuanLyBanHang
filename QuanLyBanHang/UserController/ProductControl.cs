@@ -30,10 +30,10 @@ namespace QuanLyBanHang.UserController
         private void LoadProduct()
         {
             string path = "../../../Images/Products/" + product.product_img;
-            pictureBox1.ImageLocation = File.Exists(path) ? path : "../../Resources/no-avatar.png";
+            //pictureBox1.ImageLocation = File.Exists(path) ? path : "../../Resources/no-avatar.png";
             labelProduct.Text = product.pro_name;
-            labelPrice.Text = product.unit_price.ToString();
-            labelUnit.Text = product.quantity_perUnit;
+            //labelPrice.Text = product.unit_price.ToString();
+            //labelUnit.Text = product.quantity_perUnit;
         
         }
 

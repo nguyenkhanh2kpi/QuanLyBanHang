@@ -55,6 +55,9 @@ namespace QuanLyBanHang.Gui
                 }
                 labelMoth.Text = total.ToString();
             }
+
+            labelprofitday.Text = GetProfitToDay().ToString();
+            labelprofitmonth.Text = GetProfitThisMonth().ToString();
         }
 
         // Today
@@ -168,6 +171,37 @@ namespace QuanLyBanHang.Gui
                 }
             }
             return count;
+        }
+
+        private int GetProfitToDay()
+        {
+            int profit = 0;
+            using (var db = new QuanLyBanHang1Entities())
+            {
+                foreach(var i in db.OrderItems)
+                {
+                    if(i.Order.order_date == DateTime.Today)
+                    {
+                        profit += (i.Product.unit_price - i.Product.import_price);
+                    }
+                }
+            }
+            return profit;
+        }
+        private int GetProfitThisMonth()
+        {
+            int profit = 0;
+            using (var db = new QuanLyBanHang1Entities())
+            {
+                foreach (var i in db.OrderItems)
+                {
+                    if (i.Order.order_date.Value.Month == DateTime.Today.Month)
+                    {
+                        profit += (i.Product.unit_price - i.Product.import_price);
+                    }
+                }
+            }
+            return profit;
         }
     }
 }
