@@ -209,6 +209,7 @@ namespace QuanLyBanHang.Gui
             form.ShowDialog();
             textBoxCusphone.Text = form.code;
             textBoxCusphone.Refresh();
+            buttonCheck_Click(sender, e);
         }
     }
 }

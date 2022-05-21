@@ -43,12 +43,16 @@ namespace QuanLyBanHang.Gui
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.labeldiscount = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.checkBoxBronze = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -191,6 +195,26 @@ namespace QuanLyBanHang.Gui
             this.panel2.Size = new System.Drawing.Size(420, 153);
             this.panel2.TabIndex = 16;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(12, 100);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(89, 26);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "xxxxxxx";
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(219, 89);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(177, 49);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Check";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -209,26 +233,6 @@ namespace QuanLyBanHang.Gui
             this.label6.TabIndex = 0;
             this.label6.Text = "Gift Cart";
             // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(219, 89);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(177, 49);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Check";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 100);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 26);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "xxxxxxx";
-            // 
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -238,15 +242,59 @@ namespace QuanLyBanHang.Gui
             this.button3.TabIndex = 17;
             this.button3.Text = "Weekend discount";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // labeldiscount
+            // 
+            this.labeldiscount.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labeldiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labeldiscount.Location = new System.Drawing.Point(326, 493);
+            this.labeldiscount.Name = "labeldiscount";
+            this.labeldiscount.Size = new System.Drawing.Size(170, 34);
+            this.labeldiscount.TabIndex = 18;
             // 
             // label7
             // 
-            this.label7.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(326, 493);
+            this.label7.Location = new System.Drawing.Point(68, 42);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(170, 34);
-            this.label7.TabIndex = 18;
+            this.label7.Size = new System.Drawing.Size(63, 26);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Rank";
+            // 
+            // checkBoxBronze
+            // 
+            this.checkBoxBronze.AutoSize = true;
+            this.checkBoxBronze.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxBronze.Location = new System.Drawing.Point(164, 41);
+            this.checkBoxBronze.Name = "checkBoxBronze";
+            this.checkBoxBronze.Size = new System.Drawing.Size(103, 30);
+            this.checkBoxBronze.TabIndex = 20;
+            this.checkBoxBronze.Text = "Bronze";
+            this.checkBoxBronze.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.Location = new System.Drawing.Point(290, 42);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(89, 30);
+            this.checkBox1.TabIndex = 21;
+            this.checkBox1.Text = "Silver";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox2.Location = new System.Drawing.Point(416, 42);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(80, 30);
+            this.checkBox2.TabIndex = 22;
+            this.checkBox2.Text = "Gold";
+            this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // CheckOut
             // 
@@ -254,7 +302,11 @@ namespace QuanLyBanHang.Gui
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(148)))), ((int)(((byte)(79)))));
             this.ClientSize = new System.Drawing.Size(1346, 728);
+            this.Controls.Add(this.checkBox2);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.checkBoxBronze);
             this.Controls.Add(this.label7);
+            this.Controls.Add(this.labeldiscount);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label4);
@@ -300,6 +352,10 @@ namespace QuanLyBanHang.Gui
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label labeldiscount;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.CheckBox checkBoxBronze;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
     }
 }

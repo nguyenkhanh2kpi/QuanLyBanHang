@@ -18,6 +18,7 @@ namespace QuanLyBanHang.Models
         public Customer()
         {
             this.Orders = new HashSet<Order>();
+            this.CustomerRanks = new HashSet<CustomerRank>();
         }
     
         public int id { get; set; }
@@ -27,5 +28,7 @@ namespace QuanLyBanHang.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Orders { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CustomerRank> CustomerRanks { get; set; }
     }
 }

@@ -36,10 +36,10 @@ namespace QuanLyBanHang.Gui
             this.textBoxCusphone = new System.Windows.Forms.TextBox();
             this.dataGridViewOrder = new System.Windows.Forms.DataGridView();
             this.dataGridViewDetail = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.giveBackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDetail)).BeginInit();
@@ -114,6 +114,21 @@ namespace QuanLyBanHang.Gui
             this.dataGridViewDetail.TabIndex = 14;
             this.dataGridViewDetail.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewDetail_CellMouseUp);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.giveBackToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(143, 28);
+            // 
+            // giveBackToolStripMenuItem
+            // 
+            this.giveBackToolStripMenuItem.Name = "giveBackToolStripMenuItem";
+            this.giveBackToolStripMenuItem.Size = new System.Drawing.Size(142, 24);
+            this.giveBackToolStripMenuItem.Text = "Give Back";
+            this.giveBackToolStripMenuItem.Click += new System.EventHandler(this.giveBackToolStripMenuItem_Click);
+            // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -134,26 +149,11 @@ namespace QuanLyBanHang.Gui
             this.label2.TabIndex = 16;
             this.label2.Text = "detail";
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.giveBackToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(143, 28);
-            // 
-            // giveBackToolStripMenuItem
-            // 
-            this.giveBackToolStripMenuItem.Name = "giveBackToolStripMenuItem";
-            this.giveBackToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
-            this.giveBackToolStripMenuItem.Text = "Give Back";
-            this.giveBackToolStripMenuItem.Click += new System.EventHandler(this.giveBackToolStripMenuItem_Click);
-            // 
             // GiveBack
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(87)))), ((int)(((byte)(91)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(189)))), ((int)(((byte)(117)))));
             this.ClientSize = new System.Drawing.Size(888, 691);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

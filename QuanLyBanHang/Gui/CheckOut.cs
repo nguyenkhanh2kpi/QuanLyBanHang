@@ -32,6 +32,13 @@ namespace QuanLyBanHang.Gui
             this.employee = emp;
             this.customer = null;
         }
+        public void LoadOrCreateCusRank()
+        {
+            using(var db = new QuanLyBanHang1Entities())
+            {
+                //var r = db.CustomerRanks.FirstOrDefault
+            }
+        }
 
         private void CheckOut_Load(object sender, EventArgs e)
         {
@@ -206,6 +213,24 @@ namespace QuanLyBanHang.Gui
                     buttonOrder.Enabled = true;
                     break;
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if(labeldiscount.Text == "")
+            {
+                if (DateTime.Today.DayOfWeek == DayOfWeek.Saturday)
+                {
+                    int total = Int32.Parse(labelTotal.Text);
+                    if (total > 400000)
+                    {
+                        total = total - 50000;
+                        labelTotal.Text = total.ToString();
+                        labeldiscount.Text = 50000.ToString();
+                    }
+                }
+            }
+   
         }
     }
 }

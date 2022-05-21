@@ -88,6 +88,7 @@ namespace QuanLyBanHang.Gui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(189)))), ((int)(((byte)(117)))));
             this.ClientSize = new System.Drawing.Size(757, 450);
             this.Controls.Add(this.textBoxBank);
             this.Controls.Add(this.label2);

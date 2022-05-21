@@ -379,5 +379,11 @@ namespace QuanLyBanHang.Gui
             var form = new GiftCard();
             form.ShowDialog();
         }
+
+        private void buttonwarehouse_Click(object sender, EventArgs e)
+        {
+            var form = new Warehouse();
+            form.ShowDialog();
+        }
     }
 }

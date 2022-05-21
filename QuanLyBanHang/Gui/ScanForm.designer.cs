@@ -37,27 +37,31 @@ namespace QuanLyBanHang.Gui
             // camComboBox
             // 
             this.camComboBox.FormattingEnabled = true;
-            this.camComboBox.Location = new System.Drawing.Point(217, 32);
+            this.camComboBox.Location = new System.Drawing.Point(193, 26);
+            this.camComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.camComboBox.Name = "camComboBox";
-            this.camComboBox.Size = new System.Drawing.Size(458, 28);
+            this.camComboBox.Size = new System.Drawing.Size(408, 24);
             this.camComboBox.TabIndex = 0;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(85, 114);
+            this.pictureBox1.Location = new System.Drawing.Point(76, 91);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(729, 394);
+            this.pictureBox1.Size = new System.Drawing.Size(648, 315);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
             // ScanForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(950, 631);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(189)))), ((int)(((byte)(117)))));
+            this.ClientSize = new System.Drawing.Size(844, 505);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.camComboBox);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ScanForm";
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ScanForm_FormClosing);

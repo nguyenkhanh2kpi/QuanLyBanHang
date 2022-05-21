@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="07a83ae2c51e4c8eb04c01b7fd46bfa3" Name="Diagram1">
-        <EntityTypeShape EntityType="QuanLyBanHang2Model.CartItem" Width="1.5" PointX="5.25" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyBanHang2Model.CartItem" Width="1.5" PointX="4.625" PointY="9.25" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLyBanHang2Model.Category" Width="1.5" PointX="0.5" PointY="10.625" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLyBanHang2Model.Customer" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLyBanHang2Model.Employee" Width="1.5" PointX="1.25" PointY="2" IsExpanded="true" />
@@ -22,6 +22,8 @@
         <AssociationConnector Association="QuanLyBanHang2Model.FK__OrderItem__order__30F848ED" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLyBanHang2Model.FK__OrderShip__order__3A81B327" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLyBanHang2Model.FK__OrderItem__produ__31EC6D26" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="QuanLyBanHang2Model.CustomerRank" Width="1.5" PointX="0.875" PointY="13.125" IsExpanded="true" />
+        <AssociationConnector Association="QuanLyBanHang2Model.FK__CustomerR__cus_i__49C3F6B7" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

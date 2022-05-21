@@ -34,5 +34,6 @@ namespace QuanLyBanHang.Models
         public virtual DbSet<OrderItem> OrderItems { get; set; }
         public virtual DbSet<OrderShip> OrderShips { get; set; }
         public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<CustomerRank> CustomerRanks { get; set; }
     }
 }

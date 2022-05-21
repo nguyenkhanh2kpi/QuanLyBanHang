@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="QuanLyBanHang2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="QuanLyBanHang2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CartItem">
           <Key>
             <PropertyRef Name="id" />
@@ -29,6 +29,14 @@
           <Property Name="e_name" Type="varchar" MaxLength="40" Nullable="false" />
           <Property Name="regis_date" Type="date" Nullable="false" />
           <Property Name="phone_number" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="CustomerRank">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cus_id" Type="int" />
+          <Property Name="reward" Type="int" />
         </EntityType>
         <EntityType Name="Employee">
           <Key>
@@ -109,6 +117,18 @@
             </Principal>
             <Dependent Role="CartItem">
               <PropertyRef Name="product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CustomerR__cus_i__49C3F6B7">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+          <End Role="CustomerRank" Type="Self.CustomerRank" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CustomerRank">
+              <PropertyRef Name="cus_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -200,6 +220,7 @@
           <EntitySet Name="CartItem" EntityType="Self.CartItem" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CustomerRank" EntityType="Self.CustomerRank" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OrderByCard" EntityType="Self.OrderByCard" Schema="dbo" store:Type="Tables" />
@@ -209,6 +230,10 @@
           <AssociationSet Name="FK__CartItem__produc__34C8D9D1" Association="Self.FK__CartItem__produc__34C8D9D1">
             <End Role="Product" EntitySet="Product" />
             <End Role="CartItem" EntitySet="CartItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CustomerR__cus_i__49C3F6B7" Association="Self.FK__CustomerR__cus_i__49C3F6B7">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="CustomerRank" EntitySet="CustomerRank" />
           </AssociationSet>
           <AssociationSet Name="FK__Order__cus_id__2D27B809" Association="Self.FK__Order__cus_id__2D27B809">
             <End Role="Customer" EntitySet="Customer" />
@@ -239,8 +264,7 @@
             <End Role="Product" EntitySet="Product" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="QuanLyBanHang2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -271,6 +295,7 @@
           <Property Name="regis_date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="phone_number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Orders" Relationship="Self.FK__Order__cus_id__2D27B809" FromRole="Customer" ToRole="Order" />
+          <NavigationProperty Name="CustomerRanks" Relationship="QuanLyBanHang2Model.FK__CustomerR__cus_i__49C3F6B7" FromRole="Customer" ToRole="CustomerRank" />
         </EntityType>
         <EntityType Name="Employee">
           <Key>
@@ -493,7 +518,33 @@
             <End Role="Product" EntitySet="Products" />
             <End Role="OrderItem" EntitySet="OrderItems" />
           </AssociationSet>
+          <EntitySet Name="CustomerRanks" EntityType="QuanLyBanHang2Model.CustomerRank" />
+          <AssociationSet Name="FK__CustomerR__cus_i__49C3F6B7" Association="QuanLyBanHang2Model.FK__CustomerR__cus_i__49C3F6B7">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="CustomerRank" EntitySet="CustomerRanks" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="CustomerRank">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cus_id" Type="Int32" />
+          <Property Name="reward" Type="Int32" />
+          <NavigationProperty Name="Customer" Relationship="QuanLyBanHang2Model.FK__CustomerR__cus_i__49C3F6B7" FromRole="CustomerRank" ToRole="Customer" />
+        </EntityType>
+        <Association Name="FK__CustomerR__cus_i__49C3F6B7">
+          <End Type="QuanLyBanHang2Model.Customer" Role="Customer" Multiplicity="0..1" />
+          <End Type="QuanLyBanHang2Model.CustomerRank" Role="CustomerRank" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CustomerRank">
+              <PropertyRef Name="cus_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -601,6 +652,15 @@
                 <ScalarProperty Name="pro_status" ColumnName="pro_status" />
                 <ScalarProperty Name="product_img" ColumnName="product_img" />
                 <ScalarProperty Name="decription" ColumnName="decription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerRanks">
+            <EntityTypeMapping TypeName="QuanLyBanHang2Model.CustomerRank">
+              <MappingFragment StoreEntitySet="CustomerRank">
+                <ScalarProperty Name="reward" ColumnName="reward" />
+                <ScalarProperty Name="cus_id" ColumnName="cus_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

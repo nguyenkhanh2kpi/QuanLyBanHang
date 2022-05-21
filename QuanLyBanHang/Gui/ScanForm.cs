@@ -52,7 +52,12 @@ namespace QuanLyBanHang.Gui
                 videoCaptureDevice = null;
                 ClearImage();
                 code = result.ToString();
-                //this.Close();
+                this.Invoke(new EventHandler(
+                            delegate
+                            {
+                                Close(); // Entering with a "Step Into" here it crashes.
+                            }
+                                            ));
             }
         }
 

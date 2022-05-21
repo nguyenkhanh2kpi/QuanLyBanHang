@@ -297,9 +297,9 @@ namespace QuanLyBanHang.Gui
             // 
             this.buttonScan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(225)))), ((int)(((byte)(151)))));
             this.buttonScan.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonScan.Location = new System.Drawing.Point(443, 5);
+            this.buttonScan.Location = new System.Drawing.Point(473, 5);
             this.buttonScan.Name = "buttonScan";
-            this.buttonScan.Size = new System.Drawing.Size(141, 47);
+            this.buttonScan.Size = new System.Drawing.Size(111, 47);
             this.buttonScan.TabIndex = 15;
             this.buttonScan.Text = "Scan";
             this.buttonScan.UseVisualStyleBackColor = false;
@@ -320,9 +320,9 @@ namespace QuanLyBanHang.Gui
             // labelCusname
             // 
             this.labelCusname.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCusname.Location = new System.Drawing.Point(202, 12);
+            this.labelCusname.Location = new System.Drawing.Point(172, 12);
             this.labelCusname.Name = "labelCusname";
-            this.labelCusname.Size = new System.Drawing.Size(235, 34);
+            this.labelCusname.Size = new System.Drawing.Size(295, 34);
             this.labelCusname.TabIndex = 13;
             this.labelCusname.Text = "no-customer";
             // 
@@ -341,7 +341,7 @@ namespace QuanLyBanHang.Gui
             // textBoxCusphone
             // 
             this.textBoxCusphone.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCusphone.Location = new System.Drawing.Point(19, 14);
+            this.textBoxCusphone.Location = new System.Drawing.Point(3, 9);
             this.textBoxCusphone.Name = "textBoxCusphone";
             this.textBoxCusphone.Size = new System.Drawing.Size(167, 32);
             this.textBoxCusphone.TabIndex = 11;
