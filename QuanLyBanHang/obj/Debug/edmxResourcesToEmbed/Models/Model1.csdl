@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="QuanLyBanHang2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="QuanLyBanHangRemakeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="CartItem">
     <Key>
       <PropertyRef Name="id" />
@@ -26,7 +26,17 @@
     <Property Name="e_name" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="regis_date" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="phone_number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CustomerRanks" Relationship="Self.FK__CustomerR__cus_i__3D5E1FD2" FromRole="Customer" ToRole="CustomerRank" />
     <NavigationProperty Name="Orders" Relationship="Self.FK__Order__cus_id__2D27B809" FromRole="Customer" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="CustomerRank">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cus_id" Type="Int32" />
+    <Property Name="reward" Type="Int32" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK__CustomerR__cus_i__3D5E1FD2" FromRole="CustomerRank" ToRole="Customer" />
   </EntityType>
   <EntityType Name="Employee">
     <Key>
@@ -64,8 +74,8 @@
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="order_id" Type="Int32" />
-    <Property Name="card_id" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="bank" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="card_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bank" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Order" Relationship="Self.FK__OrderByCa__order__37A5467C" FromRole="OrderByCard" ToRole="Order" />
   </EntityType>
   <EntityType Name="OrderItem">
@@ -86,11 +96,11 @@
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="order_id" Type="Int32" />
-    <Property Name="ship_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ship_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="ship_address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="ship_phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="card_id" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="bank" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ship_phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="card_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bank" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Order" Relationship="Self.FK__OrderShip__order__3A81B327" FromRole="OrderShip" ToRole="Order" />
   </EntityType>
   <EntityType Name="Product">
@@ -101,7 +111,7 @@
     <Property Name="cat_id" Type="Int32" />
     <Property Name="pro_name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="quantity_perUnit" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="import_price" Type="Int32" Nullable="false" />
+    <Property Name="import_price" Type="Int32" />
     <Property Name="unit_price" Type="Int32" Nullable="false" />
     <Property Name="units_instock" Type="Int32" Nullable="false" />
     <Property Name="pro_status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
@@ -132,6 +142,18 @@
       </Principal>
       <Dependent Role="Product">
         <PropertyRef Name="cat_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CustomerR__cus_i__3D5E1FD2">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="CustomerRank" Type="Self.CustomerRank" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="CustomerRank">
+        <PropertyRef Name="cus_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -211,6 +233,7 @@
     <EntitySet Name="CartItems" EntityType="Self.CartItem" />
     <EntitySet Name="Categories" EntityType="Self.Category" />
     <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="CustomerRanks" EntityType="Self.CustomerRank" />
     <EntitySet Name="Employees" EntityType="Self.Employee" />
     <EntitySet Name="Orders" EntityType="Self.Order" />
     <EntitySet Name="OrderByCards" EntityType="Self.OrderByCard" />
@@ -224,6 +247,10 @@
     <AssociationSet Name="FK__Product__cat_id__267ABA7A" Association="Self.FK__Product__cat_id__267ABA7A">
       <End Role="Category" EntitySet="Categories" />
       <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CustomerR__cus_i__3D5E1FD2" Association="Self.FK__CustomerR__cus_i__3D5E1FD2">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="CustomerRank" EntitySet="CustomerRanks" />
     </AssociationSet>
     <AssociationSet Name="FK__Order__cus_id__2D27B809" Association="Self.FK__Order__cus_id__2D27B809">
       <End Role="Customer" EntitySet="Customers" />

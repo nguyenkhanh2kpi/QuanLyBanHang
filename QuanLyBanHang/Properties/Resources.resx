@@ -133,13 +133,16 @@
   <data name="logo-cua-hang-zulily" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo-cua-hang-zulily.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="category-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\category-1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bg_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bg_3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LOGO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LOGO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bg_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bg_3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="category-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\category-1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="5087579" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\5087579.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

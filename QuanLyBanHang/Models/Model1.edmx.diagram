@@ -4,26 +4,26 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="07a83ae2c51e4c8eb04c01b7fd46bfa3" Name="Diagram1">
-        <EntityTypeShape EntityType="QuanLyBanHang2Model.CartItem" Width="1.5" PointX="4.625" PointY="9.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyBanHang2Model.Category" Width="1.5" PointX="0.5" PointY="10.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyBanHang2Model.Customer" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyBanHang2Model.Employee" Width="1.5" PointX="1.25" PointY="2" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyBanHang2Model.Order" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyBanHang2Model.OrderByCard" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyBanHang2Model.OrderItem" Width="1.5" PointX="5.5" PointY="6.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyBanHang2Model.OrderShip" Width="1.5" PointX="2.125" PointY="7.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyBanHang2Model.Product" Width="1.5" PointX="3.125" PointY="10.875" IsExpanded="true" />
-        <AssociationConnector Association="QuanLyBanHang2Model.FK__CartItem__produc__34C8D9D1" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyBanHang2Model.FK__Product__cat_id__267ABA7A" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyBanHang2Model.FK__Order__cus_id__2D27B809" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyBanHang2Model.FK__Order__emp_id__2E1BDC42" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyBanHang2Model.FK__OrderByCa__order__37A5467C" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyBanHang2Model.FK__OrderItem__order__30F848ED" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyBanHang2Model.FK__OrderShip__order__3A81B327" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyBanHang2Model.FK__OrderItem__produ__31EC6D26" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="QuanLyBanHang2Model.CustomerRank" Width="1.5" PointX="0.875" PointY="13.125" IsExpanded="true" />
-        <AssociationConnector Association="QuanLyBanHang2Model.FK__CustomerR__cus_i__49C3F6B7" />
+      <Diagram DiagramId="804a4383596c4e35b016180c67b98ae4" Name="Diagram1">
+        <EntityTypeShape EntityType="QuanLyBanHangRemakeModel.CartItem" Width="1.5" PointX="8.25" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyBanHangRemakeModel.Category" Width="1.5" PointX="3.75" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyBanHangRemakeModel.Customer" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyBanHangRemakeModel.CustomerRank" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyBanHangRemakeModel.Employee" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyBanHangRemakeModel.Order" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyBanHangRemakeModel.OrderByCard" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyBanHangRemakeModel.OrderItem" Width="1.5" PointX="8.25" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyBanHangRemakeModel.OrderShip" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyBanHangRemakeModel.Product" Width="1.5" PointX="6" PointY="11.125" IsExpanded="true" />
+        <AssociationConnector Association="QuanLyBanHangRemakeModel.FK__CartItem__produc__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyBanHangRemakeModel.FK__Product__cat_id__267ABA7A" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyBanHangRemakeModel.FK__CustomerR__cus_i__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyBanHangRemakeModel.FK__Order__cus_id__2D27B809" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyBanHangRemakeModel.FK__Order__emp_id__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyBanHangRemakeModel.FK__OrderByCa__order__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyBanHangRemakeModel.FK__OrderItem__order__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyBanHangRemakeModel.FK__OrderShip__order__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyBanHangRemakeModel.FK__OrderItem__produ__31EC6D26" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

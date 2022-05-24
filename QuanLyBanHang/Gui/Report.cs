@@ -182,7 +182,7 @@ namespace QuanLyBanHang.Gui
                 {
                     if(i.Order.order_date == DateTime.Today)
                     {
-                        profit += (i.Product.unit_price - i.Product.import_price);
+                        profit += (int)(i.Product.unit_price - i.Product.import_price);
                     }
                 }
             }
@@ -197,7 +197,7 @@ namespace QuanLyBanHang.Gui
                 {
                     if (i.Order.order_date.Value.Month == DateTime.Today.Month)
                     {
-                        profit += (i.Product.unit_price - i.Product.import_price);
+                        profit += (int)(i.Product.unit_price - i.Product.import_price);
                     }
                 }
             }

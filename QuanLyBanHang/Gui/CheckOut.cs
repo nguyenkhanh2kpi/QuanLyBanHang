@@ -17,9 +17,11 @@ namespace QuanLyBanHang.Gui
     public partial class CheckOut : Form
     {
         private Employee employee;
-        private Customer customer = new Customer();
-        int  orderrr_id;
-        Order thisorder;
+        private Customer customer;
+        private int  orderrr_id;
+        private Order thisorder;
+        private int totalbill = 0;
+        private CustomerRank cusRank = new CustomerRank();
         public CheckOut(Employee emp, Customer cus)
         {
             InitializeComponent();
@@ -32,16 +34,44 @@ namespace QuanLyBanHang.Gui
             this.employee = emp;
             this.customer = null;
         }
-        public void LoadOrCreateCusRank()
+        public CustomerRank LoadOrCreateCusRank()
         {
             using(var db = new QuanLyBanHang1Entities())
             {
-                //var r = db.CustomerRanks.FirstOrDefault
+                var cr = db.CustomerRanks.FirstOrDefault(r => r.cus_id == customer.id);
+                if (cr != null)
+                {
+                    if(cr.reward >= 20)
+                    {
+                        checkBoxGold.Checked = true;
+
+                    }
+                    else if(cr.reward >=15 && cr.reward< 20)
+                    {
+                        checkBoxSilver.Checked = true;
+                    }
+                    else
+                    {
+                        checkBoxBronze.Checked = true;
+                    }
+                    return cr;
+                }
+                else
+                {
+                    var crr = new CustomerRank();
+                    crr.cus_id = customer.id;
+                    crr.reward = 0;
+                    db.CustomerRanks.Add(crr);
+                    db.SaveChanges();
+                    return crr;
+                }
+            
             }
         }
 
         private void CheckOut_Load(object sender, EventArgs e)
         {
+            LoadOrCreateCusRank();
             this.thisorder=  CreateOrder();
             comboBoxPayment.SelectedIndex = 0;
             buttonOrder.Enabled = false;
@@ -107,6 +137,7 @@ namespace QuanLyBanHang.Gui
                 }
             }
             */
+            Reward(customer, totalbill);
             this.Close();
         }
         private void ChangeStock(Product product, int quantity)
@@ -189,14 +220,37 @@ namespace QuanLyBanHang.Gui
             application.Cells[dataGridView1.Rows.Count + 3, dataGridView1.Columns.Count - 1] = total;
             application.Columns.AutoFit();
             application.ActiveWorkbook.SaveCopyAs(path);
-            application.ActiveWorkbook.Saved = true; 
+            application.ActiveWorkbook.Saved = true;
+            totalbill = total;
         }
+
+
+
+
+        private void Reward(Customer customer, int bill)
+        {
+            using(var db = new QuanLyBanHang1Entities())
+            {
+                var cure = db.CustomerRanks.FirstOrDefault(c => c.cus_id == customer.id);
+                if (bill >= 500000)
+                {
+                    cure.reward += 5;
+                }
+                else if(bill>=300000 && bill < 500000)
+                {
+                    cure.reward += 3;
+                }
+                db.SaveChanges();
+            }
+        }
+        
 
 
         // ok click
 
         private void button1_Click(object sender, EventArgs e)
         {
+         
             switch (comboBoxPayment.SelectedIndex)
             {
                 case 0:
@@ -227,6 +281,7 @@ namespace QuanLyBanHang.Gui
                         total = total - 50000;
                         labelTotal.Text = total.ToString();
                         labeldiscount.Text = 50000.ToString();
+                        
                     }
                 }
             }

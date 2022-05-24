@@ -25,7 +25,7 @@ namespace QuanLyBanHang.Models
         public Nullable<int> cat_id { get; set; }
         public string pro_name { get; set; }
         public string quantity_perUnit { get; set; }
-        public int import_price { get; set; }
+        public Nullable<int> import_price { get; set; }
         public int unit_price { get; set; }
         public int units_instock { get; set; }
         public string pro_status { get; set; }

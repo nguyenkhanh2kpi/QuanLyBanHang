@@ -32,11 +32,10 @@ namespace QuanLyBanHang.Gui
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonwarehouse = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.buttonOrder = new System.Windows.Forms.Button();
-            this.buttonCustomer = new System.Windows.Forms.Button();
             this.buttonEmployee = new System.Windows.Forms.Button();
             this.buttonProduct = new System.Windows.Forms.Button();
             this.buttonCategory = new System.Windows.Forms.Button();
@@ -52,7 +51,7 @@ namespace QuanLyBanHang.Gui
             this.contextMenuStripPerson = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.registerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.buttonwarehouse = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStripCatProduct.SuspendLayout();
@@ -63,12 +62,11 @@ namespace QuanLyBanHang.Gui
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(189)))), ((int)(((byte)(117)))));
+            this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.buttonwarehouse);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.buttonOrder);
-            this.panel1.Controls.Add(this.buttonCustomer);
             this.panel1.Controls.Add(this.buttonEmployee);
             this.panel1.Controls.Add(this.buttonProduct);
             this.panel1.Controls.Add(this.buttonCategory);
@@ -78,12 +76,25 @@ namespace QuanLyBanHang.Gui
             this.panel1.Size = new System.Drawing.Size(205, 683);
             this.panel1.TabIndex = 1;
             // 
+            // buttonwarehouse
+            // 
+            this.buttonwarehouse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(148)))), ((int)(((byte)(79)))));
+            this.buttonwarehouse.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonwarehouse.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonwarehouse.Location = new System.Drawing.Point(4, 141);
+            this.buttonwarehouse.Name = "buttonwarehouse";
+            this.buttonwarehouse.Size = new System.Drawing.Size(199, 67);
+            this.buttonwarehouse.TabIndex = 9;
+            this.buttonwarehouse.Text = "Warehouse";
+            this.buttonwarehouse.UseVisualStyleBackColor = false;
+            this.buttonwarehouse.Click += new System.EventHandler(this.buttonwarehouse_Click);
+            // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(148)))), ((int)(((byte)(79)))));
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button4.Location = new System.Drawing.Point(4, 551);
+            this.button4.Location = new System.Drawing.Point(4, 415);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(199, 67);
             this.button4.TabIndex = 8;
@@ -96,7 +107,7 @@ namespace QuanLyBanHang.Gui
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(148)))), ((int)(((byte)(79)))));
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button3.Location = new System.Drawing.Point(4, 483);
+            this.button3.Location = new System.Drawing.Point(4, 346);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(199, 67);
             this.button3.TabIndex = 7;
@@ -109,7 +120,7 @@ namespace QuanLyBanHang.Gui
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(148)))), ((int)(((byte)(79)))));
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(3, 417);
+            this.button2.Location = new System.Drawing.Point(3, 277);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(199, 67);
             this.button2.TabIndex = 6;
@@ -117,38 +128,12 @@ namespace QuanLyBanHang.Gui
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // buttonOrder
-            // 
-            this.buttonOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(148)))), ((int)(((byte)(79)))));
-            this.buttonOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonOrder.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonOrder.Location = new System.Drawing.Point(3, 342);
-            this.buttonOrder.Name = "buttonOrder";
-            this.buttonOrder.Size = new System.Drawing.Size(199, 73);
-            this.buttonOrder.TabIndex = 5;
-            this.buttonOrder.Text = "Order";
-            this.buttonOrder.UseVisualStyleBackColor = false;
-            this.buttonOrder.Click += new System.EventHandler(this.buttonOrder_Click);
-            // 
-            // buttonCustomer
-            // 
-            this.buttonCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(148)))), ((int)(((byte)(79)))));
-            this.buttonCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCustomer.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonCustomer.Location = new System.Drawing.Point(3, 271);
-            this.buttonCustomer.Name = "buttonCustomer";
-            this.buttonCustomer.Size = new System.Drawing.Size(199, 72);
-            this.buttonCustomer.TabIndex = 4;
-            this.buttonCustomer.Text = "Customer";
-            this.buttonCustomer.UseVisualStyleBackColor = false;
-            this.buttonCustomer.Click += new System.EventHandler(this.buttonCustomer_Click);
-            // 
             // buttonEmployee
             // 
             this.buttonEmployee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(148)))), ((int)(((byte)(79)))));
             this.buttonEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEmployee.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonEmployee.Location = new System.Drawing.Point(3, 209);
+            this.buttonEmployee.Location = new System.Drawing.Point(3, 211);
             this.buttonEmployee.Name = "buttonEmployee";
             this.buttonEmployee.Size = new System.Drawing.Size(199, 64);
             this.buttonEmployee.TabIndex = 3;
@@ -161,7 +146,7 @@ namespace QuanLyBanHang.Gui
             this.buttonProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(148)))), ((int)(((byte)(79)))));
             this.buttonProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonProduct.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonProduct.Location = new System.Drawing.Point(3, 71);
+            this.buttonProduct.Location = new System.Drawing.Point(3, 73);
             this.buttonProduct.Name = "buttonProduct";
             this.buttonProduct.Size = new System.Drawing.Size(199, 67);
             this.buttonProduct.TabIndex = 2;
@@ -291,18 +276,17 @@ namespace QuanLyBanHang.Gui
             this.removeToolStripMenuItem1.Text = "Remove";
             this.removeToolStripMenuItem1.Click += new System.EventHandler(this.removeToolStripMenuItem1_Click);
             // 
-            // buttonwarehouse
+            // button5
             // 
-            this.buttonwarehouse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(148)))), ((int)(((byte)(79)))));
-            this.buttonwarehouse.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonwarehouse.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonwarehouse.Location = new System.Drawing.Point(4, 139);
-            this.buttonwarehouse.Name = "buttonwarehouse";
-            this.buttonwarehouse.Size = new System.Drawing.Size(199, 67);
-            this.buttonwarehouse.TabIndex = 9;
-            this.buttonwarehouse.Text = "Warehouse";
-            this.buttonwarehouse.UseVisualStyleBackColor = false;
-            this.buttonwarehouse.Click += new System.EventHandler(this.buttonwarehouse_Click);
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(148)))), ((int)(((byte)(79)))));
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button5.Location = new System.Drawing.Point(6, 484);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(199, 67);
+            this.button5.TabIndex = 10;
+            this.button5.Text = "Best Saler";
+            this.button5.UseVisualStyleBackColor = false;
             // 
             // Admin
             // 
@@ -331,8 +315,6 @@ namespace QuanLyBanHang.Gui
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button buttonOrder;
-        private System.Windows.Forms.Button buttonCustomer;
         private System.Windows.Forms.Button buttonEmployee;
         private System.Windows.Forms.Button buttonProduct;
         private System.Windows.Forms.Button buttonCategory;
@@ -352,5 +334,6 @@ namespace QuanLyBanHang.Gui
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button buttonwarehouse;
+        private System.Windows.Forms.Button button5;
     }
 }

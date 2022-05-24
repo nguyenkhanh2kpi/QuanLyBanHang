@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="QuanLyBanHang2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="QuanLyBanHangRemakeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CartItem">
           <Key>
             <PropertyRef Name="id" />
@@ -68,8 +68,8 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="order_id" Type="int" />
-          <Property Name="card_id" Type="varchar" MaxLength="20" />
-          <Property Name="bank" Type="varchar" MaxLength="20" />
+          <Property Name="card_id" Type="varchar" MaxLength="50" />
+          <Property Name="bank" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="OrderItem">
           <Key>
@@ -87,11 +87,11 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="order_id" Type="int" />
-          <Property Name="ship_name" Type="varchar" MaxLength="30" />
+          <Property Name="ship_name" Type="varchar" MaxLength="50" />
           <Property Name="ship_address" Type="varchar" MaxLength="50" />
-          <Property Name="ship_phone" Type="varchar" MaxLength="20" />
-          <Property Name="card_id" Type="varchar" MaxLength="20" />
-          <Property Name="bank" Type="varchar" MaxLength="20" />
+          <Property Name="ship_phone" Type="varchar" MaxLength="50" />
+          <Property Name="card_id" Type="varchar" MaxLength="50" />
+          <Property Name="bank" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -101,7 +101,7 @@
           <Property Name="cat_id" Type="int" />
           <Property Name="pro_name" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="quantity_perUnit" Type="varchar" MaxLength="10" />
-          <Property Name="import_price" Type="int" Nullable="false" />
+          <Property Name="import_price" Type="int" />
           <Property Name="unit_price" Type="int" Nullable="false" />
           <Property Name="units_instock" Type="int" Nullable="false" />
           <Property Name="pro_status" Type="varchar" MaxLength="10" Nullable="false" />
@@ -120,7 +120,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CustomerR__cus_i__49C3F6B7">
+        <Association Name="FK__CustomerR__cus_i__3D5E1FD2">
           <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
           <End Role="CustomerRank" Type="Self.CustomerRank" Multiplicity="*" />
           <ReferentialConstraint>
@@ -216,7 +216,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="QuanLyBanHang2ModelStoreContainer">
+        <EntityContainer Name="QuanLyBanHangRemakeModelStoreContainer">
           <EntitySet Name="CartItem" EntityType="Self.CartItem" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
@@ -231,7 +231,7 @@
             <End Role="Product" EntitySet="Product" />
             <End Role="CartItem" EntitySet="CartItem" />
           </AssociationSet>
-          <AssociationSet Name="FK__CustomerR__cus_i__49C3F6B7" Association="Self.FK__CustomerR__cus_i__49C3F6B7">
+          <AssociationSet Name="FK__CustomerR__cus_i__3D5E1FD2" Association="Self.FK__CustomerR__cus_i__3D5E1FD2">
             <End Role="Customer" EntitySet="Customer" />
             <End Role="CustomerRank" EntitySet="CustomerRank" />
           </AssociationSet>
@@ -264,10 +264,11 @@
             <End Role="Product" EntitySet="Product" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="QuanLyBanHang2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="QuanLyBanHangRemakeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="CartItem">
           <Key>
             <PropertyRef Name="id" />
@@ -294,8 +295,17 @@
           <Property Name="e_name" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="regis_date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="phone_number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CustomerRanks" Relationship="Self.FK__CustomerR__cus_i__3D5E1FD2" FromRole="Customer" ToRole="CustomerRank" />
           <NavigationProperty Name="Orders" Relationship="Self.FK__Order__cus_id__2D27B809" FromRole="Customer" ToRole="Order" />
-          <NavigationProperty Name="CustomerRanks" Relationship="QuanLyBanHang2Model.FK__CustomerR__cus_i__49C3F6B7" FromRole="Customer" ToRole="CustomerRank" />
+        </EntityType>
+        <EntityType Name="CustomerRank">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cus_id" Type="Int32" />
+          <Property Name="reward" Type="Int32" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK__CustomerR__cus_i__3D5E1FD2" FromRole="CustomerRank" ToRole="Customer" />
         </EntityType>
         <EntityType Name="Employee">
           <Key>
@@ -333,8 +343,8 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="order_id" Type="Int32" />
-          <Property Name="card_id" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="bank" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="card_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="bank" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Order" Relationship="Self.FK__OrderByCa__order__37A5467C" FromRole="OrderByCard" ToRole="Order" />
         </EntityType>
         <EntityType Name="OrderItem">
@@ -355,11 +365,11 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="order_id" Type="Int32" />
-          <Property Name="ship_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ship_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ship_address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="ship_phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="card_id" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="bank" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ship_phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="card_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="bank" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Order" Relationship="Self.FK__OrderShip__order__3A81B327" FromRole="OrderShip" ToRole="Order" />
         </EntityType>
         <EntityType Name="Product">
@@ -370,7 +380,7 @@
           <Property Name="cat_id" Type="Int32" />
           <Property Name="pro_name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="quantity_perUnit" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="import_price" Type="Int32" Nullable="false" />
+          <Property Name="import_price" Type="Int32" />
           <Property Name="unit_price" Type="Int32" Nullable="false" />
           <Property Name="units_instock" Type="Int32" Nullable="false" />
           <Property Name="pro_status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
@@ -401,6 +411,18 @@
             </Principal>
             <Dependent Role="Product">
               <PropertyRef Name="cat_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CustomerR__cus_i__3D5E1FD2">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+          <End Role="CustomerRank" Type="Self.CustomerRank" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CustomerRank">
+              <PropertyRef Name="cus_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -480,6 +502,7 @@
           <EntitySet Name="CartItems" EntityType="Self.CartItem" />
           <EntitySet Name="Categories" EntityType="Self.Category" />
           <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="CustomerRanks" EntityType="Self.CustomerRank" />
           <EntitySet Name="Employees" EntityType="Self.Employee" />
           <EntitySet Name="Orders" EntityType="Self.Order" />
           <EntitySet Name="OrderByCards" EntityType="Self.OrderByCard" />
@@ -493,6 +516,10 @@
           <AssociationSet Name="FK__Product__cat_id__267ABA7A" Association="Self.FK__Product__cat_id__267ABA7A">
             <End Role="Category" EntitySet="Categories" />
             <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CustomerR__cus_i__3D5E1FD2" Association="Self.FK__CustomerR__cus_i__3D5E1FD2">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="CustomerRank" EntitySet="CustomerRanks" />
           </AssociationSet>
           <AssociationSet Name="FK__Order__cus_id__2D27B809" Association="Self.FK__Order__cus_id__2D27B809">
             <End Role="Customer" EntitySet="Customers" />
@@ -518,41 +545,15 @@
             <End Role="Product" EntitySet="Products" />
             <End Role="OrderItem" EntitySet="OrderItems" />
           </AssociationSet>
-          <EntitySet Name="CustomerRanks" EntityType="QuanLyBanHang2Model.CustomerRank" />
-          <AssociationSet Name="FK__CustomerR__cus_i__49C3F6B7" Association="QuanLyBanHang2Model.FK__CustomerR__cus_i__49C3F6B7">
-            <End Role="Customer" EntitySet="Customers" />
-            <End Role="CustomerRank" EntitySet="CustomerRanks" />
-          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="CustomerRank">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="cus_id" Type="Int32" />
-          <Property Name="reward" Type="Int32" />
-          <NavigationProperty Name="Customer" Relationship="QuanLyBanHang2Model.FK__CustomerR__cus_i__49C3F6B7" FromRole="CustomerRank" ToRole="Customer" />
-        </EntityType>
-        <Association Name="FK__CustomerR__cus_i__49C3F6B7">
-          <End Type="QuanLyBanHang2Model.Customer" Role="Customer" Multiplicity="0..1" />
-          <End Type="QuanLyBanHang2Model.CustomerRank" Role="CustomerRank" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Customer">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="CustomerRank">
-              <PropertyRef Name="cus_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="QuanLyBanHang2ModelStoreContainer" CdmEntityContainer="QuanLyBanHang1Entities">
+        <EntityContainerMapping StorageEntityContainer="QuanLyBanHangRemakeModelStoreContainer" CdmEntityContainer="QuanLyBanHang1Entities">
           <EntitySetMapping Name="CartItems">
-            <EntityTypeMapping TypeName="QuanLyBanHang2Model.CartItem">
+            <EntityTypeMapping TypeName="QuanLyBanHangRemakeModel.CartItem">
               <MappingFragment StoreEntitySet="CartItem">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="product_id" ColumnName="product_id" />
@@ -562,7 +563,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Categories">
-            <EntityTypeMapping TypeName="QuanLyBanHang2Model.Category">
+            <EntityTypeMapping TypeName="QuanLyBanHangRemakeModel.Category">
               <MappingFragment StoreEntitySet="Category">
                 <ScalarProperty Name="cat_id" ColumnName="cat_id" />
                 <ScalarProperty Name="cat_name" ColumnName="cat_name" />
@@ -570,7 +571,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Customers">
-            <EntityTypeMapping TypeName="QuanLyBanHang2Model.Customer">
+            <EntityTypeMapping TypeName="QuanLyBanHangRemakeModel.Customer">
               <MappingFragment StoreEntitySet="Customer">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="e_name" ColumnName="e_name" />
@@ -579,8 +580,17 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="CustomerRanks">
+            <EntityTypeMapping TypeName="QuanLyBanHangRemakeModel.CustomerRank">
+              <MappingFragment StoreEntitySet="CustomerRank">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="cus_id" ColumnName="cus_id" />
+                <ScalarProperty Name="reward" ColumnName="reward" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Employees">
-            <EntityTypeMapping TypeName="QuanLyBanHang2Model.Employee">
+            <EntityTypeMapping TypeName="QuanLyBanHangRemakeModel.Employee">
               <MappingFragment StoreEntitySet="Employee">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="e_name" ColumnName="e_name" />
@@ -596,7 +606,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Orders">
-            <EntityTypeMapping TypeName="QuanLyBanHang2Model.Order">
+            <EntityTypeMapping TypeName="QuanLyBanHangRemakeModel.Order">
               <MappingFragment StoreEntitySet="Order">
                 <ScalarProperty Name="order_id" ColumnName="order_id" />
                 <ScalarProperty Name="cus_id" ColumnName="cus_id" />
@@ -606,7 +616,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="OrderByCards">
-            <EntityTypeMapping TypeName="QuanLyBanHang2Model.OrderByCard">
+            <EntityTypeMapping TypeName="QuanLyBanHangRemakeModel.OrderByCard">
               <MappingFragment StoreEntitySet="OrderByCard">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="order_id" ColumnName="order_id" />
@@ -616,7 +626,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="OrderItems">
-            <EntityTypeMapping TypeName="QuanLyBanHang2Model.OrderItem">
+            <EntityTypeMapping TypeName="QuanLyBanHangRemakeModel.OrderItem">
               <MappingFragment StoreEntitySet="OrderItem">
                 <ScalarProperty Name="item_id" ColumnName="item_id" />
                 <ScalarProperty Name="order_id" ColumnName="order_id" />
@@ -627,7 +637,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="OrderShips">
-            <EntityTypeMapping TypeName="QuanLyBanHang2Model.OrderShip">
+            <EntityTypeMapping TypeName="QuanLyBanHangRemakeModel.OrderShip">
               <MappingFragment StoreEntitySet="OrderShip">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="order_id" ColumnName="order_id" />
@@ -640,7 +650,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Products">
-            <EntityTypeMapping TypeName="QuanLyBanHang2Model.Product">
+            <EntityTypeMapping TypeName="QuanLyBanHangRemakeModel.Product">
               <MappingFragment StoreEntitySet="Product">
                 <ScalarProperty Name="pro_id" ColumnName="pro_id" />
                 <ScalarProperty Name="cat_id" ColumnName="cat_id" />
@@ -652,15 +662,6 @@
                 <ScalarProperty Name="pro_status" ColumnName="pro_status" />
                 <ScalarProperty Name="product_img" ColumnName="product_img" />
                 <ScalarProperty Name="decription" ColumnName="decription" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="CustomerRanks">
-            <EntityTypeMapping TypeName="QuanLyBanHang2Model.CustomerRank">
-              <MappingFragment StoreEntitySet="CustomerRank">
-                <ScalarProperty Name="reward" ColumnName="reward" />
-                <ScalarProperty Name="cus_id" ColumnName="cus_id" />
-                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

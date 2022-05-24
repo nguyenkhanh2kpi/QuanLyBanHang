@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="QuanLyBanHang2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="QuanLyBanHangRemakeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="CartItem">
     <Key>
       <PropertyRef Name="id" />
@@ -24,6 +24,14 @@
     <Property Name="e_name" Type="varchar" MaxLength="40" Nullable="false" />
     <Property Name="regis_date" Type="date" Nullable="false" />
     <Property Name="phone_number" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="CustomerRank">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cus_id" Type="int" />
+    <Property Name="reward" Type="int" />
   </EntityType>
   <EntityType Name="Employee">
     <Key>
@@ -55,8 +63,8 @@
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="order_id" Type="int" />
-    <Property Name="card_id" Type="varchar" MaxLength="20" />
-    <Property Name="bank" Type="varchar" MaxLength="20" />
+    <Property Name="card_id" Type="varchar" MaxLength="50" />
+    <Property Name="bank" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="OrderItem">
     <Key>
@@ -74,11 +82,11 @@
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="order_id" Type="int" />
-    <Property Name="ship_name" Type="varchar" MaxLength="30" />
+    <Property Name="ship_name" Type="varchar" MaxLength="50" />
     <Property Name="ship_address" Type="varchar" MaxLength="50" />
-    <Property Name="ship_phone" Type="varchar" MaxLength="20" />
-    <Property Name="card_id" Type="varchar" MaxLength="20" />
-    <Property Name="bank" Type="varchar" MaxLength="20" />
+    <Property Name="ship_phone" Type="varchar" MaxLength="50" />
+    <Property Name="card_id" Type="varchar" MaxLength="50" />
+    <Property Name="bank" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Product">
     <Key>
@@ -88,7 +96,7 @@
     <Property Name="cat_id" Type="int" />
     <Property Name="pro_name" Type="varchar" MaxLength="20" Nullable="false" />
     <Property Name="quantity_perUnit" Type="varchar" MaxLength="10" />
-    <Property Name="import_price" Type="int" Nullable="false" />
+    <Property Name="import_price" Type="int" />
     <Property Name="unit_price" Type="int" Nullable="false" />
     <Property Name="units_instock" Type="int" Nullable="false" />
     <Property Name="pro_status" Type="varchar" MaxLength="10" Nullable="false" />
@@ -104,6 +112,18 @@
       </Principal>
       <Dependent Role="CartItem">
         <PropertyRef Name="product_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CustomerR__cus_i__3D5E1FD2">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="CustomerRank" Type="Self.CustomerRank" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="CustomerRank">
+        <PropertyRef Name="cus_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -191,10 +211,11 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="QuanLyBanHang2ModelStoreContainer">
+  <EntityContainer Name="QuanLyBanHangRemakeModelStoreContainer">
     <EntitySet Name="CartItem" EntityType="Self.CartItem" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustomerRank" EntityType="Self.CustomerRank" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="OrderByCard" EntityType="Self.OrderByCard" Schema="dbo" store:Type="Tables" />
@@ -204,6 +225,10 @@
     <AssociationSet Name="FK__CartItem__produc__34C8D9D1" Association="Self.FK__CartItem__produc__34C8D9D1">
       <End Role="Product" EntitySet="Product" />
       <End Role="CartItem" EntitySet="CartItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CustomerR__cus_i__3D5E1FD2" Association="Self.FK__CustomerR__cus_i__3D5E1FD2">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="CustomerRank" EntitySet="CustomerRank" />
     </AssociationSet>
     <AssociationSet Name="FK__Order__cus_id__2D27B809" Association="Self.FK__Order__cus_id__2D27B809">
       <End Role="Customer" EntitySet="Customer" />

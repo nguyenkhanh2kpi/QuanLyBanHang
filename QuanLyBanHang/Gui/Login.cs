@@ -78,6 +78,7 @@ namespace QuanLyBanHang.Gui
                         else
                         {
                             var form1 = new Home(per);
+                            resetEachMonth();
                             form1.Show();
                             this.Visible = false;
                         }
@@ -106,6 +107,29 @@ namespace QuanLyBanHang.Gui
             {
                 passwordTxt.PasswordChar = '*';
                 pictureBox3.Image = Properties.Resources.visibility;
+            }
+        }
+
+        // reset each month 
+        private void resetEachMonth()
+        {
+            if(DateTime.Today.Day == 22)
+            {
+                resetRank();
+            }
+        }
+
+
+        // reset rank
+        private void resetRank()
+        {
+            using(var db = new QuanLyBanHang1Entities())
+            {
+                foreach(var i in db.CustomerRanks)
+                {
+                    db.CustomerRanks.Remove(i);
+                }
+                db.SaveChanges();
             }
         }
     }

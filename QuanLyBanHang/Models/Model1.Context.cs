@@ -28,12 +28,12 @@ namespace QuanLyBanHang.Models
         public virtual DbSet<CartItem> CartItems { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
+        public virtual DbSet<CustomerRank> CustomerRanks { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<OrderByCard> OrderByCards { get; set; }
         public virtual DbSet<OrderItem> OrderItems { get; set; }
         public virtual DbSet<OrderShip> OrderShips { get; set; }
         public virtual DbSet<Product> Products { get; set; }
-        public virtual DbSet<CustomerRank> CustomerRanks { get; set; }
     }
 }
