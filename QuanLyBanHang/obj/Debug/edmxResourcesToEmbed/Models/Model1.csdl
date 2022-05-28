@@ -38,6 +38,14 @@
     <Property Name="reward" Type="Int32" />
     <NavigationProperty Name="Customer" Relationship="Self.FK__CustomerR__cus_i__3D5E1FD2" FromRole="CustomerRank" ToRole="Customer" />
   </EntityType>
+  <EntityType Name="Discount">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="date_discount" Type="DateTime" Precision="3" />
+    <Property Name="discount1" Type="Int32" />
+  </EntityType>
   <EntityType Name="Employee">
     <Key>
       <PropertyRef Name="id" />
@@ -234,6 +242,7 @@
     <EntitySet Name="Categories" EntityType="Self.Category" />
     <EntitySet Name="Customers" EntityType="Self.Customer" />
     <EntitySet Name="CustomerRanks" EntityType="Self.CustomerRank" />
+    <EntitySet Name="Discounts" EntityType="Self.Discount" />
     <EntitySet Name="Employees" EntityType="Self.Employee" />
     <EntitySet Name="Orders" EntityType="Self.Order" />
     <EntitySet Name="OrderByCards" EntityType="Self.OrderByCard" />

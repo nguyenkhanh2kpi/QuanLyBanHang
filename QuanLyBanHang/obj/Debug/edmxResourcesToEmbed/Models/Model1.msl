@@ -38,6 +38,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Discounts">
+      <EntityTypeMapping TypeName="QuanLyBanHangRemakeModel.Discount">
+        <MappingFragment StoreEntitySet="Discount">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="date_discount" ColumnName="date_discount" />
+          <ScalarProperty Name="discount1" ColumnName="discount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Employees">
       <EntityTypeMapping TypeName="QuanLyBanHangRemakeModel.Employee">
         <MappingFragment StoreEntitySet="Employee">

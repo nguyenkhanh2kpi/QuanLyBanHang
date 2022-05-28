@@ -38,34 +38,37 @@ namespace QuanLyBanHang.Gui
         {
             using(var db = new QuanLyBanHang1Entities())
             {
-                var cr = db.CustomerRanks.FirstOrDefault(r => r.cus_id == customer.id);
-                if (cr != null)
+                if(customer != null)
                 {
-                    if(cr.reward >= 20)
+                    var cr = db.CustomerRanks.FirstOrDefault(r => r.cus_id == customer.id);
+                    if (cr != null)
                     {
-                        checkBoxGold.Checked = true;
+                        if (cr.reward >= 20)
+                        {
+                            checkBoxGold.Checked = true;
 
-                    }
-                    else if(cr.reward >=15 && cr.reward< 20)
-                    {
-                        checkBoxSilver.Checked = true;
+                        }
+                        else if (cr.reward >= 15 && cr.reward < 20)
+                        {
+                            checkBoxSilver.Checked = true;
+                        }
+                        else
+                        {
+                            checkBoxBronze.Checked = true;
+                        }
+                        return cr;
                     }
                     else
                     {
-                        checkBoxBronze.Checked = true;
+                        var crr = new CustomerRank();
+                        crr.cus_id = customer.id;
+                        crr.reward = 0;
+                        db.CustomerRanks.Add(crr);
+                        db.SaveChanges();
+                        return crr;
                     }
-                    return cr;
                 }
-                else
-                {
-                    var crr = new CustomerRank();
-                    crr.cus_id = customer.id;
-                    crr.reward = 0;
-                    db.CustomerRanks.Add(crr);
-                    db.SaveChanges();
-                    return crr;
-                }
-            
+                return null;
             }
         }
 
@@ -119,7 +122,7 @@ namespace QuanLyBanHang.Gui
             SaveFileDialog saveFile = new SaveFileDialog();
             saveFile.Title = "bill";
             saveFile.Filter = "Excel (*.xlsx)|*.xlsx ";
-            saveFile.FileName = "C:/Users/KHANH/OneDrive/Desktop/DeTaiWinF/git-remake/QuanLyBanHang/bills/"+"order_" +order.order_id.ToString()+".xlsx";
+            saveFile.FileName = "C:/Users/KHANH/OneDrive/Desktop/DeTaiWinF/git-remake/QuanLyBanHang/bills/" + "order_" + order.order_id.ToString() + ".xlsx";
             ExportExcel(saveFile.FileName);
             MessageBox.Show("SUCCESS");
             /*
@@ -138,6 +141,33 @@ namespace QuanLyBanHang.Gui
             }
             */
             Reward(customer, totalbill);
+            //
+            //
+            //
+
+            // remember discount
+            using (var db = new QuanLyBanHang1Entities())
+            {
+                var discount = db.Discounts.FirstOrDefault(d => d.date_discount == DateTime.Today);
+                if(discount != null)
+                {
+                    discount.discount1 += Int32.Parse(labeldiscount.Text) + Int32.Parse(textBoxGiftCart.Text);
+                }
+                else
+                {
+                    Discount disc = new Discount();
+                    disc.date_discount = DateTime.Today;
+                    disc.discount1 = 0;
+                    disc.discount1 += Int32.Parse(labeldiscount.Text) + Int32.Parse(textBoxGiftCart.Text);
+                    db.Discounts.Add(disc);
+                }
+
+                db.SaveChanges();
+            }
+            ///
+            ///
+            ///
+            //
             this.Close();
         }
         private void ChangeStock(Product product, int quantity)
@@ -218,6 +248,12 @@ namespace QuanLyBanHang.Gui
             }
             application.Cells[dataGridView1.Rows.Count+3, dataGridView1.Columns.Count-2] = "Total";
             application.Cells[dataGridView1.Rows.Count + 3, dataGridView1.Columns.Count - 1] = total;
+
+            application.Cells[dataGridView1.Rows.Count + 4, dataGridView1.Columns.Count - 2] = "Discount";
+            application.Cells[dataGridView1.Rows.Count + 4, dataGridView1.Columns.Count - 1] = Int32.Parse(labeldiscount.Text) + Int32.Parse(textBoxGiftCart.Text);
+
+            application.Cells[dataGridView1.Rows.Count + 5, dataGridView1.Columns.Count - 2] = "Last Total";
+            application.Cells[dataGridView1.Rows.Count + 5, dataGridView1.Columns.Count - 1] = total -  Int32.Parse(labeldiscount.Text) - Int32.Parse(textBoxGiftCart.Text);
             application.Columns.AutoFit();
             application.ActiveWorkbook.SaveCopyAs(path);
             application.ActiveWorkbook.Saved = true;
@@ -231,16 +267,19 @@ namespace QuanLyBanHang.Gui
         {
             using(var db = new QuanLyBanHang1Entities())
             {
-                var cure = db.CustomerRanks.FirstOrDefault(c => c.cus_id == customer.id);
-                if (bill >= 500000)
+                if (customer != null)
                 {
-                    cure.reward += 5;
+                    var cure = db.CustomerRanks.FirstOrDefault(c => c.cus_id == customer.id);
+                    if (bill >= 500000)
+                    {
+                        cure.reward += 5;
+                    }
+                    else if (bill >= 300000 && bill < 500000)
+                    {
+                        cure.reward += 3;
+                    }
+                    db.SaveChanges();
                 }
-                else if(bill>=300000 && bill < 500000)
-                {
-                    cure.reward += 3;
-                }
-                db.SaveChanges();
             }
         }
         
@@ -286,6 +325,21 @@ namespace QuanLyBanHang.Gui
                 }
             }
    
+        }
+
+        private void buttonGiftCart_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int total = Int32.Parse(labelTotal.Text);
+                total = total - Int32.Parse(textBoxGiftCart.Text);
+                labelTotal.Text = total.ToString();
+            }
+            catch
+            {
+                MessageBox.Show("Enter a number");
+            }
+    
         }
     }
 }

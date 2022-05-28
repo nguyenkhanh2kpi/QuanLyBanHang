@@ -164,25 +164,33 @@ namespace QuanLyBanHang.Gui
 
         private void buttonCheckOut_Click(object sender, EventArgs e)
         {
-            if (textBoxCusphone.Enabled == false)
+            using(var db = new QuanLyBanHang1Entities())
             {
-                buttonCart_Click(sender, e);
-                var form = new CheckOut(this.emp);
-                form.ShowDialog();
-            }
-            else
-            {
-                if (cus == null)
+                if(db.CartItems.Count()!= 0)
                 {
-                    MessageBox.Show("can find your customer");
-                }
-                else
-                {
-                    buttonCart_Click(sender, e);
-                    var form = new CheckOut(this.emp, this.cus);
-                    form.ShowDialog();
+
+                    if (textBoxCusphone.Enabled == false)
+                    {
+                        buttonCart_Click(sender, e);
+                        var form = new CheckOut(this.emp);
+                        form.ShowDialog();
+                    }
+                    else
+                    {
+                        if (cus == null)
+                        {
+                            MessageBox.Show("can find your customer");
+                        }
+                        else
+                        {
+                            buttonCart_Click(sender, e);
+                            var form = new CheckOut(this.emp, this.cus);
+                            form.ShowDialog();
+                        }
+                    }
                 }
             }
+
         }
 
         private void buttonReset_Click(object sender, EventArgs e)

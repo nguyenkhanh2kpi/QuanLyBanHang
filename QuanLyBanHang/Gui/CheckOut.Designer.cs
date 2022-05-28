@@ -48,6 +48,8 @@ namespace QuanLyBanHang.Gui
             this.checkBoxBronze = new System.Windows.Forms.CheckBox();
             this.checkBoxSilver = new System.Windows.Forms.CheckBox();
             this.checkBoxGold = new System.Windows.Forms.CheckBox();
+            this.buttonGiftCart = new System.Windows.Forms.Button();
+            this.textBoxGiftCart = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -196,6 +198,7 @@ namespace QuanLyBanHang.Gui
             this.labeldiscount.Name = "labeldiscount";
             this.labeldiscount.Size = new System.Drawing.Size(156, 37);
             this.labeldiscount.TabIndex = 18;
+            this.labeldiscount.Text = "0";
             // 
             // label7
             // 
@@ -240,12 +243,34 @@ namespace QuanLyBanHang.Gui
             this.checkBoxGold.Text = "Gold";
             this.checkBoxGold.UseVisualStyleBackColor = true;
             // 
+            // buttonGiftCart
+            // 
+            this.buttonGiftCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonGiftCart.Location = new System.Drawing.Point(73, 387);
+            this.buttonGiftCart.Name = "buttonGiftCart";
+            this.buttonGiftCart.Size = new System.Drawing.Size(258, 49);
+            this.buttonGiftCart.TabIndex = 23;
+            this.buttonGiftCart.Text = "Gift Cart";
+            this.buttonGiftCart.UseVisualStyleBackColor = true;
+            this.buttonGiftCart.Click += new System.EventHandler(this.buttonGiftCart_Click);
+            // 
+            // textBoxGiftCart
+            // 
+            this.textBoxGiftCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxGiftCart.Location = new System.Drawing.Point(337, 395);
+            this.textBoxGiftCart.Name = "textBoxGiftCart";
+            this.textBoxGiftCart.Size = new System.Drawing.Size(154, 32);
+            this.textBoxGiftCart.TabIndex = 25;
+            this.textBoxGiftCart.Text = "0";
+            // 
             // CheckOut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(148)))), ((int)(((byte)(79)))));
             this.ClientSize = new System.Drawing.Size(1346, 728);
+            this.Controls.Add(this.textBoxGiftCart);
+            this.Controls.Add(this.buttonGiftCart);
             this.Controls.Add(this.checkBoxGold);
             this.Controls.Add(this.checkBoxSilver);
             this.Controls.Add(this.checkBoxBronze);
@@ -293,5 +318,7 @@ namespace QuanLyBanHang.Gui
         private System.Windows.Forms.CheckBox checkBoxBronze;
         private System.Windows.Forms.CheckBox checkBoxSilver;
         private System.Windows.Forms.CheckBox checkBoxGold;
+        private System.Windows.Forms.Button buttonGiftCart;
+        private System.Windows.Forms.TextBox textBoxGiftCart;
     }
 }

@@ -33,6 +33,14 @@
     <Property Name="cus_id" Type="int" />
     <Property Name="reward" Type="int" />
   </EntityType>
+  <EntityType Name="Discount">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="date_discount" Type="datetime" />
+    <Property Name="discount" Type="int" />
+  </EntityType>
   <EntityType Name="Employee">
     <Key>
       <PropertyRef Name="id" />
@@ -216,6 +224,7 @@
     <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CustomerRank" EntityType="Self.CustomerRank" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Discount" EntityType="Self.Discount" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="OrderByCard" EntityType="Self.OrderByCard" Schema="dbo" store:Type="Tables" />

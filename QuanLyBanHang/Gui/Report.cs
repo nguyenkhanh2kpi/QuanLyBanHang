@@ -23,6 +23,8 @@ namespace QuanLyBanHang.Gui
         {
             LoadSalesByEmployeeToday();
             LoadSalesByEmplyeeMonth();
+            labeldiscounttoday.Text = GetDiscountToday().ToString();
+            labeldiscountthismonth.Text = GetDiscountThismonth().ToString();
         }
 
         //This month
@@ -186,7 +188,7 @@ namespace QuanLyBanHang.Gui
                     }
                 }
             }
-            return profit;
+            return profit - GetDiscountToday() ;
         }
         private int GetProfitThisMonth()
         {
@@ -201,7 +203,39 @@ namespace QuanLyBanHang.Gui
                     }
                 }
             }
-            return profit;
+            return profit - GetDiscountThismonth();
+        }
+
+        // get discount today
+        private int GetDiscountToday()
+        {
+            int discount = 0;
+            using (var db = new QuanLyBanHang1Entities())
+            {
+                foreach (var i in db.Discounts)
+                {
+                    if (i.date_discount.Value == DateTime.Today)
+                    {
+                        discount =(int)i.discount1;
+                    }
+                }
+            }
+            return discount;
+        }
+        private int GetDiscountThismonth()
+        {
+            int discount = 0;
+            using (var db = new QuanLyBanHang1Entities())
+            {
+                foreach (var i in db.Discounts)
+                {
+                    if (i.date_discount.Value.Month == DateTime.Today.Month)
+                    {
+                        discount = (int)i.discount1;
+                    }
+                }
+            }
+            return discount;
         }
     }
 }

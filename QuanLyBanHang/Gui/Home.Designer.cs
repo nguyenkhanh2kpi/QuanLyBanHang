@@ -161,7 +161,7 @@ namespace QuanLyBanHang.Gui
             // 
             this.buttonSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(225)))), ((int)(((byte)(151)))));
             this.buttonSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSearch.Location = new System.Drawing.Point(1349, 15);
+            this.buttonSearch.Location = new System.Drawing.Point(1349, 14);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(108, 47);
             this.buttonSearch.TabIndex = 2;
@@ -173,7 +173,7 @@ namespace QuanLyBanHang.Gui
             // 
             this.buttonLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(225)))), ((int)(((byte)(151)))));
             this.buttonLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLogout.Location = new System.Drawing.Point(1463, 12);
+            this.buttonLogout.Location = new System.Drawing.Point(1459, 14);
             this.buttonLogout.Name = "buttonLogout";
             this.buttonLogout.Size = new System.Drawing.Size(100, 47);
             this.buttonLogout.TabIndex = 4;

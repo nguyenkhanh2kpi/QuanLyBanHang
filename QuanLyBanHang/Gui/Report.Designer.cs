@@ -42,6 +42,10 @@ namespace QuanLyBanHang.Gui
             this.label6 = new System.Windows.Forms.Label();
             this.labelprofitday = new System.Windows.Forms.Label();
             this.labelprofitmonth = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.labeldiscounttoday = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.labeldiscountthismonth = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewToday)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMonth)).BeginInit();
             this.SuspendLayout();
@@ -55,7 +59,7 @@ namespace QuanLyBanHang.Gui
             this.dataGridViewToday.Name = "dataGridViewToday";
             this.dataGridViewToday.RowHeadersWidth = 51;
             this.dataGridViewToday.RowTemplate.Height = 24;
-            this.dataGridViewToday.Size = new System.Drawing.Size(1022, 284);
+            this.dataGridViewToday.Size = new System.Drawing.Size(1229, 284);
             this.dataGridViewToday.TabIndex = 7;
             // 
             // dataGridViewMonth
@@ -67,7 +71,7 @@ namespace QuanLyBanHang.Gui
             this.dataGridViewMonth.Name = "dataGridViewMonth";
             this.dataGridViewMonth.RowHeadersWidth = 51;
             this.dataGridViewMonth.RowTemplate.Height = 24;
-            this.dataGridViewMonth.Size = new System.Drawing.Size(1022, 306);
+            this.dataGridViewMonth.Size = new System.Drawing.Size(1229, 306);
             this.dataGridViewMonth.TabIndex = 12;
             // 
             // labelDay
@@ -134,7 +138,7 @@ namespace QuanLyBanHang.Gui
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(721, 17);
+            this.label5.Location = new System.Drawing.Point(948, 17);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(173, 26);
             this.label5.TabIndex = 22;
@@ -144,7 +148,7 @@ namespace QuanLyBanHang.Gui
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(721, 357);
+            this.label6.Location = new System.Drawing.Point(948, 357);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(199, 26);
             this.label6.TabIndex = 23;
@@ -154,7 +158,7 @@ namespace QuanLyBanHang.Gui
             // 
             this.labelprofitday.AutoSize = true;
             this.labelprofitday.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelprofitday.Location = new System.Drawing.Point(955, 17);
+            this.labelprofitday.Location = new System.Drawing.Point(1182, 17);
             this.labelprofitday.Name = "labelprofitday";
             this.labelprofitday.Size = new System.Drawing.Size(141, 26);
             this.labelprofitday.TabIndex = 24;
@@ -164,18 +168,62 @@ namespace QuanLyBanHang.Gui
             // 
             this.labelprofitmonth.AutoSize = true;
             this.labelprofitmonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelprofitmonth.Location = new System.Drawing.Point(969, 357);
+            this.labelprofitmonth.Location = new System.Drawing.Point(1196, 357);
             this.labelprofitmonth.Name = "labelprofitmonth";
             this.labelprofitmonth.Size = new System.Drawing.Size(70, 26);
             this.labelprofitmonth.TabIndex = 25;
             this.labelprofitmonth.Text = "label2";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(687, 17);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(97, 26);
+            this.label7.TabIndex = 27;
+            this.label7.Text = "Discount";
+            // 
+            // labeldiscounttoday
+            // 
+            this.labeldiscounttoday.AutoSize = true;
+            this.labeldiscounttoday.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labeldiscounttoday.Location = new System.Drawing.Point(816, 17);
+            this.labeldiscounttoday.Name = "labeldiscounttoday";
+            this.labeldiscounttoday.Size = new System.Drawing.Size(70, 26);
+            this.labeldiscounttoday.TabIndex = 26;
+            this.labeldiscounttoday.Text = "label3";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(687, 357);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(97, 26);
+            this.label9.TabIndex = 29;
+            this.label9.Text = "Discount";
+            // 
+            // labeldiscountthismonth
+            // 
+            this.labeldiscountthismonth.AutoSize = true;
+            this.labeldiscountthismonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labeldiscountthismonth.Location = new System.Drawing.Point(816, 357);
+            this.labeldiscountthismonth.Name = "labeldiscountthismonth";
+            this.labeldiscountthismonth.Size = new System.Drawing.Size(70, 26);
+            this.labeldiscountthismonth.TabIndex = 28;
+            this.labeldiscountthismonth.Text = "label3";
             // 
             // Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(189)))), ((int)(((byte)(117)))));
-            this.ClientSize = new System.Drawing.Size(1146, 701);
+            this.ClientSize = new System.Drawing.Size(1405, 701);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.labeldiscountthismonth);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.labeldiscounttoday);
             this.Controls.Add(this.labelprofitmonth);
             this.Controls.Add(this.labelprofitday);
             this.Controls.Add(this.label6);
@@ -213,5 +261,9 @@ namespace QuanLyBanHang.Gui
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label labelprofitday;
         private System.Windows.Forms.Label labelprofitmonth;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label labeldiscounttoday;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label labeldiscountthismonth;
     }
 }
